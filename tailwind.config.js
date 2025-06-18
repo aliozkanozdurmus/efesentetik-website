@@ -8,6 +8,7 @@ module.exports = {
     "./src/**/*.{ts,tsx}",
     "*.{js,ts,jsx,tsx,mdx}",
   ],
+  prefix: "",
   theme: {
     container: {
       center: true,
@@ -51,19 +52,20 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Navy Blue colors (from logo)
         navy: {
-          50: "#f0f2ff",
-          100: "#e6eaff",
-          200: "#d1d9ff",
-          300: "#b3c0ff",
-          400: "#8f9dff",
-          500: "#6b7aff",
-          600: "#4c5bdb",
-          700: "#3d4bb8",
-          800: "#2f3a94",
-          900: "#1f2870",
-          950: "#141a4d",
+          50: "#f0f4f8",
+          100: "#d9e2ec",
+          200: "#bcccdc",
+          300: "#9fb3c8",
+          400: "#829ab1",
+          500: "#627d98",
+          600: "#486581",
+          700: "#334e68",
+          800: "#243b53",
+          900: "#102a43",
         },
+        // Red colors (from logo)
         red: {
           50: "#fef2f2",
           100: "#fee2e2",
@@ -75,7 +77,6 @@ module.exports = {
           700: "#b91c1c",
           800: "#991b1b",
           900: "#7f1d1d",
-          950: "#450a0a",
         },
       },
       borderRadius: {
@@ -85,52 +86,17 @@ module.exports = {
       },
       keyframes: {
         "accordion-down": {
-          from: { height: 0 },
+          from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
           from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: 0 },
-        },
-        float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-10px)" },
-        },
-        fadeIn: {
-          from: { opacity: 0 },
-          to: { opacity: 1 },
-        },
-        fadeOut: {
-          from: { opacity: 1 },
-          to: { opacity: 0 },
-        },
-        slideIn: {
-          from: { transform: "translateX(100%)" },
-          to: { transform: "translateX(0)" },
-        },
-        slideOut: {
-          from: { transform: "translateX(0)" },
-          to: { transform: "translateX(-100%)" },
-        },
-        shimmer: {
-          "0%": { backgroundPosition: "-200% 0" },
-          "100%": { backgroundPosition: "200% 0" },
+          to: { height: "0" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        float: "float 6s ease-in-out infinite",
-        fadeIn: "fadeIn 0.5s ease-in-out forwards",
-        fadeOut: "fadeOut 0.5s ease-in-out forwards",
-        slideIn: "slideIn 0.5s ease-in-out forwards",
-        slideOut: "slideOut 0.5s ease-in-out forwards",
-        shimmer: "shimmer 8s ease-in-out infinite",
-      },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        grain: "url('/grain.png')",
       },
     },
   },
