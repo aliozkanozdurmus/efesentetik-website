@@ -5,6 +5,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Phone, Mail, Menu, X } from "lucide-react"
 import { motion, useScroll, useTransform } from "framer-motion"
+import Image from "next/image"
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -39,14 +40,22 @@ export default function Header() {
       }}
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="/" className="flex items-center space-x-2">
+        <Link href="/" className="flex items-center space-x-3">
+          <motion.div
+            className="relative w-10 h-10"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Image src="/tuna-logo.jpg" alt="Tuna Sentetik Logo" fill className="object-contain" />
+          </motion.div>
           <motion.span
             className="text-2xl font-bold gradient-text"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Efe Sentetik
+            Tuna Sentetik
           </motion.span>
         </Link>
 

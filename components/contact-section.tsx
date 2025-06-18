@@ -21,10 +21,10 @@ export default function ContactSection() {
   const formScale = useTransform(scrollYProgress, [0, 0.2], [0.95, 1])
 
   return (
-    <section id="contact" ref={sectionRef} className="py-20 bg-brown-50/50 relative overflow-hidden">
+    <section id="contact" ref={sectionRef} className="py-20 bg-navy-50/50 relative overflow-hidden">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-0 top-0 h-[300px] w-[300px] bg-brown-200/30 blur-[80px]" />
-        <div className="absolute right-0 bottom-0 h-[300px] w-[300px] bg-brown-300/20 blur-[80px]" />
+        <div className="absolute left-0 top-0 h-[300px] w-[300px] bg-red-200/30 blur-[80px]" />
+        <div className="absolute right-0 bottom-0 h-[300px] w-[300px] bg-navy-300/20 blur-[80px]" />
       </div>
 
       <div className="container mx-auto relative z-10">
@@ -42,7 +42,7 @@ export default function ContactSection() {
               <h3 className="text-2xl font-bold mb-4 gradient-text">İletişim Bilgileri</h3>
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <MapPin className="h-5 w-5 text-gold-500 mr-3 mt-0.5" />
+                  <MapPin className="h-5 w-5 text-red-500 mr-3 mt-0.5" />
                   <div>
                     <p className="font-medium gradient-text">Adres</p>
                     <p className="text-muted-foreground">
@@ -53,21 +53,21 @@ export default function ContactSection() {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <Phone className="h-5 w-5 text-gold-500 mr-3 mt-0.5" />
+                  <Phone className="h-5 w-5 text-red-500 mr-3 mt-0.5" />
                   <div>
                     <p className="font-medium gradient-text">Telefon</p>
                     <p className="text-muted-foreground">+90 342 123 4567</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <Mail className="h-5 w-5 text-gold-500 mr-3 mt-0.5" />
+                  <Mail className="h-5 w-5 text-red-500 mr-3 mt-0.5" />
                   <div>
                     <p className="font-medium gradient-text">E-posta</p>
-                    <p className="text-muted-foreground">info@efesentetik.com</p>
+                    <p className="text-muted-foreground">info@tunasentetik.com</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <Clock className="h-5 w-5 text-gold-500 mr-3 mt-0.5" />
+                  <Clock className="h-5 w-5 text-red-500 mr-3 mt-0.5" />
                   <div>
                     <p className="font-medium gradient-text">Çalışma Saatleri</p>
                     <p className="text-muted-foreground">
@@ -82,9 +82,9 @@ export default function ContactSection() {
 
             <div>
               <h3 className="text-2xl font-bold mb-4 gradient-text">Harita</h3>
-              <div className="aspect-video bg-white rounded-lg border border-brown-100 overflow-hidden shadow-lg">
+              <div className="aspect-video bg-white rounded-lg border border-navy-100 overflow-hidden shadow-lg">
                 {/* Replace with actual Google Maps embed */}
-                <div className="w-full h-full bg-gradient-to-br from-brown-100 to-brown-50 flex items-center justify-center">
+                <div className="w-full h-full bg-gradient-to-br from-navy-100 to-navy-50 flex items-center justify-center">
                   <p className="text-muted-foreground">Google Harita Yerleşimi</p>
                 </div>
               </div>
@@ -92,7 +92,7 @@ export default function ContactSection() {
           </motion.div>
 
           <motion.div
-            className="bg-white p-8 rounded-lg shadow-lg border border-brown-100 fancy-border"
+            className="bg-white p-8 rounded-lg shadow-lg border border-navy-100 fancy-border"
             style={{ opacity: formOpacity, scale: formScale }}
           >
             <h3 className="text-2xl font-bold mb-6 gradient-text">İletişim Formu</h3>
@@ -102,7 +102,7 @@ export default function ContactSection() {
                   <label htmlFor="name" className="text-sm font-medium">
                     Ad Soyad
                   </label>
-                  <Input id="name" placeholder="Ad Soyad" className="border-brown-200 focus:border-brown-400" />
+                  <Input id="name" placeholder="Ad Soyad" className="border-navy-200 focus:border-navy-400" />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium">
@@ -112,7 +112,7 @@ export default function ContactSection() {
                     id="email"
                     type="email"
                     placeholder="E-posta"
-                    className="border-brown-200 focus:border-brown-400"
+                    className="border-navy-200 focus:border-navy-400"
                   />
                 </div>
               </div>
@@ -120,13 +120,13 @@ export default function ContactSection() {
                 <label htmlFor="phone" className="text-sm font-medium">
                   Telefon
                 </label>
-                <Input id="phone" placeholder="Telefon" className="border-brown-200 focus:border-brown-400" />
+                <Input id="phone" placeholder="Telefon" className="border-navy-200 focus:border-navy-400" />
               </div>
               <div className="space-y-2">
                 <label htmlFor="subject" className="text-sm font-medium">
                   Konu
                 </label>
-                <Input id="subject" placeholder="Konu" className="border-brown-200 focus:border-brown-400" />
+                <Input id="subject" placeholder="Konu" className="border-navy-200 focus:border-navy-400" />
               </div>
               <div className="space-y-2">
                 <label htmlFor="message" className="text-sm font-medium">
@@ -136,10 +136,10 @@ export default function ContactSection() {
                   id="message"
                   placeholder="Mesajınız"
                   rows={5}
-                  className="border-brown-200 focus:border-brown-400"
+                  className="border-navy-200 focus:border-navy-400"
                 />
               </div>
-              <Button className="w-full gradient-bg-primary text-white hover:opacity-90 button-3d">
+              <Button className="w-full gradient-bg-secondary text-white hover:opacity-90 button-3d">
                 <span className="relative z-10">Gönder</span>
                 <span className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></span>
               </Button>

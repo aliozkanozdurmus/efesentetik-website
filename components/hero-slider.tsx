@@ -12,7 +12,7 @@ const slides = [
     title: "Kaliteli Çuval Üretiminde Öncü",
     subtitle: "20 Yıllık Tecrübe",
     description:
-      "Efe Sentetik olarak, tarım, gıda ve sanayi sektörlerine yönelik yüksek kaliteli çuval çözümleri sunuyoruz.",
+      "Tuna Sentetik olarak, tarım, gıda ve sanayi sektörlerine yönelik yüksek kaliteli çuval çözümleri sunuyoruz.",
     image: "/placeholder.svg?height=800&width=1200",
     buttonText: "Ürünlerimizi Keşfedin",
     buttonLink: "#products",
@@ -108,7 +108,7 @@ export default function HeroSlider() {
               className="object-cover"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-navy-900/80 via-navy-800/60 to-transparent" />
           </div>
         </motion.div>
       </AnimatePresence>
@@ -125,7 +125,7 @@ export default function HeroSlider() {
             transition={{ duration: 0.5 }}
           >
             <motion.span
-              className="mb-2 inline-block rounded-full gradient-bg-secondary px-4 py-1 text-sm font-medium"
+              className="mb-2 inline-block rounded-full gradient-bg-secondary px-4 py-1 text-sm font-medium text-white"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -133,7 +133,7 @@ export default function HeroSlider() {
               {slides[currentSlide].subtitle}
             </motion.span>
             <motion.h1
-              className="mb-4 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl gradient-text-light"
+              className="mb-4 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl text-white"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -155,7 +155,7 @@ export default function HeroSlider() {
             >
               <Button
                 size="lg"
-                className="gradient-bg-primary hover:opacity-90 button-3d group relative overflow-hidden"
+                className="gradient-bg-secondary hover:opacity-90 button-3d group relative overflow-hidden text-white"
                 asChild
               >
                 <a href={slides[currentSlide].buttonLink}>
@@ -178,7 +178,7 @@ export default function HeroSlider() {
             <button
               key={index}
               className={`h-2 rounded-full transition-all ${
-                index === currentSlide ? "w-8 bg-gold-500" : "w-2 bg-white/50"
+                index === currentSlide ? "w-8 bg-red-500" : "w-2 bg-white/50"
               }`}
               onClick={() => goToSlide(index)}
               aria-label={`Go to slide ${index + 1}`}
