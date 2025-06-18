@@ -9,14 +9,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <div className="relative w-8 h-8">
-                <Image src="/tuna-logo.jpg" alt="Tuna Sentetik Logo" fill className="object-contain" />
+              <div className="relative w-32 h-8">
+                <Image src="/tuna-logo-new.png" alt="Tuna Sentetik Logo" fill className="object-contain" />
               </div>
-              <h3 className="text-lg font-bold gradient-text-light">Tuna Sentetik</h3>
             </div>
             <p className="text-navy-100 mb-4">
-              Gaziantep'te kaliteli çuval üretimi yapan firmamız, 20 yılı aşkın tecrübesiyle sektörün öncülerinden
-              biridir.
+              1984'ten bu yana sentetik dokuma kumaş ve çuval sektöründe faaliyet gösteren, kalite ve güvenilirlikte
+              öncü firmamız.
             </p>
             <div className="flex space-x-4">
               <Link href="#" className="text-red-300 hover:text-red-200 transition-colors">
@@ -38,32 +37,27 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="/urunler" className="text-navy-200 hover:text-red-300 transition-colors">
-                  PP Çuvallar
-                </Link>
-              </li>
-              <li>
-                <Link href="/urunler" className="text-navy-200 hover:text-red-300 transition-colors">
-                  Jüt Çuvallar
-                </Link>
-              </li>
-              <li>
-                <Link href="/urunler" className="text-navy-200 hover:text-red-300 transition-colors">
-                  Lamine Çuvallar
-                </Link>
-              </li>
-              <li>
-                <Link href="/urunler" className="text-navy-200 hover:text-red-300 transition-colors">
-                  Ventilli Çuvallar
-                </Link>
-              </li>
-              <li>
-                <Link href="/urunler" className="text-navy-200 hover:text-red-300 transition-colors">
-                  Biyobozunur Çuvallar
+                  Polipropilen Dokuma Çuval
                 </Link>
               </li>
               <li>
                 <Link href="/urunler" className="text-navy-200 hover:text-red-300 transition-colors">
                   Big Bag Çuvallar
+                </Link>
+              </li>
+              <li>
+                <Link href="/urunler" className="text-navy-200 hover:text-red-300 transition-colors">
+                  Polipropilen CF İplik
+                </Link>
+              </li>
+              <li>
+                <Link href="/urunler" className="text-navy-200 hover:text-red-300 transition-colors">
+                  Polipropilen Şerit İplik
+                </Link>
+              </li>
+              <li>
+                <Link href="/urunler" className="text-navy-200 hover:text-red-300 transition-colors">
+                  Ventilli & Block Bottom
                 </Link>
               </li>
             </ul>
@@ -108,15 +102,17 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-red-400 mr-2 mt-0.5" />
-                <span className="text-navy-100">Gaziantep Organize Sanayi Bölgesi, 83120. Cadde No: 8</span>
+                <span className="text-navy-100">
+                  3. Organize Sanayi Bölgesi Kamil Şerbetçi Bulvarı No: 39, Şehitkamil / Gaziantep
+                </span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-red-400 mr-2" />
-                <span className="text-navy-100">+90 342 123 4567</span>
+                <span className="text-navy-100">0342 360 98 50</span>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-red-400 mr-2" />
-                <span className="text-navy-100">info@tunasentetik.com</span>
+                <span className="text-navy-100">info@tunasentetik.com.tr</span>
               </li>
               <li className="flex items-start">
                 <Clock className="h-5 w-5 text-red-400 mr-2 mt-0.5" />

@@ -50,24 +50,16 @@ export default function Header() {
         backdropFilter: isScrolled ? "blur(8px)" : "none",
       }}
     >
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="/" className="flex items-center space-x-3">
+      <div className="container mx-auto flex h-20 items-center justify-between px-4">
+        <Link href="/" className="flex items-center">
           <motion.div
-            className="relative w-10 h-10"
+            className="relative h-12 w-48"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <Image src="/tuna-logo.jpg" alt="Tuna Sentetik Logo" fill className="object-contain" />
+            <Image src="/tuna-logo-new.png" alt="Tuna Sentetik Logo" fill className="object-contain" priority />
           </motion.div>
-          <motion.span
-            className="text-2xl font-bold gradient-text"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            Tuna Sentetik
-          </motion.span>
         </Link>
 
         {/* Desktop Navigation */}
