@@ -23,6 +23,7 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
   const { scrollY } = useScroll()
+  const [currentLang, setCurrentLang] = useState("TR")
 
   // Transform header opacity based on scroll
   const headerBgOpacity = useTransform(scrollY, [0, 100], ["rgba(255, 255, 255, 0)", "rgba(255, 255, 255, 0.95)"])
@@ -40,6 +41,13 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  const translateToEnglish = () => {
+    if (typeof window !== "undefined") {
+      const googleTranslateUrl = `https://translate.google.com/translate?sl=tr&tl=en&u=${encodeURIComponent(window.location.href)}`
+      window.open(googleTranslateUrl, "_blank")
+    }
+  }
 
   return (
     <motion.header
@@ -82,6 +90,28 @@ export default function Header() {
               </Link>
             ))}
           </motion.div>
+          <div className="flex items-center space-x-2 ml-4 border-l border-navy-200 pl-4">
+            <button
+              onClick={() => setCurrentLang("TR")}
+              className={`px-2 py-1 text-xs font-medium transition-colors ${
+                currentLang === "TR" ? "text-red-600 bg-red-50" : "text-navy-600 hover:text-red-600"
+              }`}
+            >
+              TR
+            </button>
+            <span className="text-navy-300">|</span>
+            <button
+              onClick={() => {
+                setCurrentLang("EN")
+                translateToEnglish()
+              }}
+              className={`px-2 py-1 text-xs font-medium transition-colors ${
+                currentLang === "EN" ? "text-red-600 bg-red-50" : "text-navy-600 hover:text-red-600"
+              }`}
+            >
+              EN
+            </button>
+          </div>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -113,6 +143,28 @@ export default function Header() {
                 {item.name}
               </Link>
             ))}
+            <div className="flex justify-center space-x-4 pt-4 border-t border-navy-200">
+              <button
+                onClick={() => setCurrentLang("TR")}
+                className={`px-3 py-2 text-sm font-medium transition-colors ${
+                  currentLang === "TR" ? "text-red-600 bg-red-50" : "text-navy-600 hover:text-red-600"
+                }`}
+              >
+                TR
+              </button>
+              <button
+                onClick={() => {
+                  setCurrentLang("EN")
+                  translateToEnglish()
+                  setIsMobileMenuOpen(false)
+                }}
+                className={`px-3 py-2 text-sm font-medium transition-colors ${
+                  currentLang === "EN" ? "text-red-600 bg-red-50" : "text-navy-600 hover:text-red-600"
+                }`}
+              >
+                EN
+              </button>
+            </div>
           </div>
         </motion.div>
       )}

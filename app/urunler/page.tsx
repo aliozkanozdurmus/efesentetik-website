@@ -209,10 +209,6 @@ export default function ProductsPage() {
                         </div>
                       </div>
                     </div>
-
-                    <Button className="w-full gradient-bg-secondary text-white hover:opacity-90 button-3d">
-                      Detaylı Bilgi
-                    </Button>
                   </div>
                 </div>
 

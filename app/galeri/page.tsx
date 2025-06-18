@@ -6,137 +6,60 @@ import { Button } from "@/components/ui/button"
 import { X, ZoomIn, Download, Share2 } from "lucide-react"
 import Image from "next/image"
 
-const categories = [
-  { id: "all", name: "Tümü" },
-  { id: "facility", name: "Tesisimiz" },
-  { id: "production", name: "Üretim" },
-  { id: "products", name: "Ürünler" },
-  { id: "team", name: "Ekibimiz" },
-  { id: "events", name: "Etkinlikler" },
-]
-
 const galleryImages = [
   {
     id: 1,
-    src: "/placeholder.svg?height=600&width=800",
-    alt: "Tuna Sentetik Ana Üretim Tesisi",
-    category: "facility",
-    title: "Ana Üretim Tesisi",
-    description: "Gaziantep OSB'deki modern üretim tesisimizin genel görünümü",
+    src: "/gallery/production-1.webp",
+    alt: "Tuna Sentetik Üretim Makinesi - Dairesel Dokuma Sistemi",
+    title: "Dairesel Dokuma Makinesi",
+    description: "Modern dairesel dokuma teknolojisi ile yüksek kaliteli kumaş üretimi",
+    category: "production",
   },
   {
     id: 2,
-    src: "/placeholder.svg?height=600&width=800",
-    alt: "PP Çuval Üretim Hattı",
+    src: "/gallery/production-2.webp",
+    alt: "Tuna Sentetik Mavi Üretim Makinesi",
+    title: "İleri Teknoloji Üretim Hattı",
+    description: "Otomatik kontrol sistemli modern üretim makinelerimiz",
     category: "production",
-    title: "PP Çuval Üretim Hattı",
-    description: "Son teknoloji makinelerle PP çuval üretim sürecimiz",
   },
   {
     id: 3,
-    src: "/placeholder.svg?height=600&width=800",
-    alt: "Kaliteli Jüt Çuvallar",
-    category: "products",
-    title: "Jüt Çuval Koleksiyonu",
-    description: "Doğal ve çevre dostu jüt çuvallarımız",
+    src: "/gallery/production-3.webp",
+    alt: "Tuna Sentetik İplik İşleme Makinesi",
+    title: "İplik İşleme ve Hazırlık Sistemi",
+    description: "Çok sayıda ipliğin eş zamanlı işlenmesi için tasarlanmış sistem",
+    category: "production",
   },
   {
     id: 4,
-    src: "/placeholder.svg?height=600&width=800",
-    alt: "Kalite Kontrol Laboratuvarı",
+    src: "/gallery/production-4.webp",
+    alt: "Tuna Sentetik Paralel İplik Sistemi",
+    title: "Paralel İplik Düzenleme Sistemi",
+    description: "Hassas iplik düzenleme ve kalite kontrol sistemi",
     category: "production",
-    title: "Kalite Kontrol Laboratuvarı",
-    description: "Her ürünümüzün kalitesini test ettiğimiz modern laboratuvarımız",
-  },
-  {
-    id: 5,
-    src: "/placeholder.svg?height=600&width=800",
-    alt: "Depolama ve Lojistik Alanı",
-    category: "facility",
-    title: "Depolama Alanı",
-    description: "Organize ve modern depolama sistemimiz",
-  },
-  {
-    id: 6,
-    src: "/placeholder.svg?height=600&width=800",
-    alt: "Lamine Çuval Üretimi",
-    category: "products",
-    title: "Lamine Çuvallar",
-    description: "Yüksek baskı kalitesine sahip lamine çuvallarımız",
-  },
-  {
-    id: 7,
-    src: "/placeholder.svg?height=600&width=800",
-    alt: "Üretim Ekibi",
-    category: "team",
-    title: "Deneyimli Ekibimiz",
-    description: "20+ yıllık tecrübeli üretim ekibimiz",
-  },
-  {
-    id: 8,
-    src: "/placeholder.svg?height=600&width=800",
-    alt: "Ventilli Çuval Üretimi",
-    category: "products",
-    title: "Ventilli Çuvallar",
-    description: "Özel ventil sistemli çuvallarımızın üretim süreci",
-  },
-  {
-    id: 9,
-    src: "/placeholder.svg?height=600&width=800",
-    alt: "İhracat Fuarı Standımız",
-    category: "events",
-    title: "İhracat Fuarı",
-    description: "Uluslararası fuarlardaki standımız",
-  },
-  {
-    id: 10,
-    src: "/placeholder.svg?height=600&width=800",
-    alt: "Biyobozunur Çuval Ar-Ge",
-    category: "production",
-    title: "Ar-Ge Çalışmaları",
-    description: "Biyobozunur çuval geliştirme sürecimiz",
-  },
-  {
-    id: 11,
-    src: "/placeholder.svg?height=600&width=800",
-    alt: "Big Bag Çuval Üretimi",
-    category: "products",
-    title: "Big Bag Çuvallar",
-    description: "Yüksek kapasiteli Big Bag çuvallarımız",
-  },
-  {
-    id: 12,
-    src: "/placeholder.svg?height=600&width=800",
-    alt: "Çevre Ödülü Töreni",
-    category: "events",
-    title: "Çevre Ödülü",
-    description: "ISO 14001 sertifikası ödül törenimiz",
   },
 ]
 
 export default function GalleryPage() {
-  const [activeCategory, setActiveCategory] = useState("all")
   const [selectedImage, setSelectedImage] = useState<null | (typeof galleryImages)[0]>(null)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
-  const filteredImages =
-    activeCategory === "all" ? galleryImages : galleryImages.filter((img) => img.category === activeCategory)
-
   const openLightbox = (image: (typeof galleryImages)[0]) => {
     setSelectedImage(image)
-    setCurrentImageIndex(filteredImages.findIndex((img) => img.id === image.id))
+    setCurrentImageIndex(galleryImages.findIndex((img) => img.id === image.id))
   }
 
   const nextImage = () => {
-    const nextIndex = (currentImageIndex + 1) % filteredImages.length
+    const nextIndex = (currentImageIndex + 1) % galleryImages.length
     setCurrentImageIndex(nextIndex)
-    setSelectedImage(filteredImages[nextIndex])
+    setSelectedImage(galleryImages[nextIndex])
   }
 
   const prevImage = () => {
-    const prevIndex = currentImageIndex === 0 ? filteredImages.length - 1 : currentImageIndex - 1
+    const prevIndex = currentImageIndex === 0 ? galleryImages.length - 1 : currentImageIndex - 1
     setCurrentImageIndex(prevIndex)
-    setSelectedImage(filteredImages[prevIndex])
+    setSelectedImage(galleryImages[prevIndex])
   }
 
   return (
@@ -155,33 +78,10 @@ export default function GalleryPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6">Galeri</h1>
+            <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6">Üretim Galerimiz</h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Tesisimiz, üretim süreçlerimiz, ürünlerimiz ve ekibimizden görüntüler
+              Modern üretim tesisimiz ve son teknoloji makinelerimizden görüntüler
             </p>
-          </motion.div>
-
-          {/* Category Filter */}
-          <motion.div
-            className="flex flex-wrap justify-center gap-3 mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            {categories.map((category) => (
-              <Button
-                key={category.id}
-                variant={activeCategory === category.id ? "default" : "outline"}
-                className={
-                  activeCategory === category.id
-                    ? "gradient-bg-secondary text-white hover:opacity-90 button-3d"
-                    : "border-navy-300 text-navy-800 hover:border-navy-500 button-3d"
-                }
-                onClick={() => setActiveCategory(category.id)}
-              >
-                {category.name}
-              </Button>
-            ))}
           </motion.div>
         </div>
       </section>
@@ -189,38 +89,32 @@ export default function GalleryPage() {
       {/* Gallery Grid */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {filteredImages.map((image, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {galleryImages.map((image, index) => (
               <motion.div
                 key={image.id}
-                className="group relative aspect-square rounded-xl overflow-hidden cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300"
+                className="group relative aspect-[4/3] rounded-xl overflow-hidden cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
                 onClick={() => openLightbox(image)}
               >
                 <Image src={image.src || "/placeholder.svg"} alt={image.alt} fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h3 className="text-white font-semibold text-sm mb-1">{image.title}</h3>
-                    <p className="text-white/80 text-xs line-clamp-2">{image.description}</p>
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 className="text-white font-semibold text-lg mb-2">{image.title}</h3>
+                    <p className="text-white/80 text-sm line-clamp-2">{image.description}</p>
                   </div>
                   <div className="absolute top-4 right-4">
-                    <div className="bg-white/20 backdrop-blur-sm rounded-full p-2">
-                      <ZoomIn className="h-4 w-4 text-white" />
+                    <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
+                      <ZoomIn className="h-5 w-5 text-white" />
                     </div>
                   </div>
                 </div>
               </motion.div>
             ))}
           </div>
-
-          {filteredImages.length === 0 && (
-            <div className="text-center py-20">
-              <p className="text-muted-foreground text-lg">Bu kategoride henüz görsel bulunmamaktadır.</p>
-            </div>
-          )}
         </div>
       </section>
 
@@ -251,7 +145,7 @@ export default function GalleryPage() {
                 </div>
 
                 {/* Navigation Arrows */}
-                {filteredImages.length > 1 && (
+                {galleryImages.length > 1 && (
                   <>
                     <Button
                       variant="ghost"
@@ -301,7 +195,7 @@ export default function GalleryPage() {
                 <p className="text-white/80 text-sm">{selectedImage.description}</p>
                 <div className="flex items-center justify-between mt-2">
                   <span className="text-white/60 text-xs">
-                    {currentImageIndex + 1} / {filteredImages.length}
+                    {currentImageIndex + 1} / {galleryImages.length}
                   </span>
                 </div>
               </div>

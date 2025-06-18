@@ -18,14 +18,6 @@ const categories = [
 
 const faqs = [
   {
-    id: 1,
-    question: "Minimum sipariş miktarınız nedir?",
-    answer:
-      "Minimum sipariş miktarımız ürün tipine göre değişmektedir. PP çuvallar için genellikle 5.000 adet, jüt çuvallar için 1.000 adet ve özel üretim çuvallar için 3.000 adet minimum sipariş miktarımız bulunmaktadır. Detaylı bilgi için lütfen satış ekibimizle iletişime geçiniz.",
-    category: "orders",
-    popular: true,
-  },
-  {
     id: 2,
     question: "Çuvalların üzerine özel baskı yapabiliyor musunuz?",
     answer:
@@ -35,75 +27,38 @@ const faqs = [
   },
   {
     id: 3,
-    question: "Teslimat süreleriniz ne kadardır?",
-    answer:
-      "Teslimat sürelerimiz sipariş miktarına ve ürün tipine göre değişmektedir. Standart ürünlerimiz için genellikle 7-10 iş günü, özel üretim ve baskılı ürünler için 15-20 iş günü teslimat süremiz bulunmaktadır. Acil siparişleriniz için hızlandırılmış üretim seçeneğimiz de mevcuttur.",
-    category: "shipping",
-    popular: true,
-  },
-  {
-    id: 4,
     question: "Ürünleriniz gıda ile temasa uygun mu?",
     answer:
       "Evet, gıda sektörü için ürettiğimiz çuvallar, gıda ile temasa uygun hammaddelerden üretilmekte ve ilgili sağlık sertifikalarına sahiptir. Bu ürünlerimiz, ulusal ve uluslararası gıda güvenliği standartlarına uygun olarak üretilmektedir. FDA ve CE sertifikalarımız mevcuttur.",
     category: "quality",
   },
   {
-    id: 5,
+    id: 4,
     question: "Yurt dışına ihracat yapıyor musunuz?",
     answer:
       "Evet, başta Orta Doğu ve Afrika ülkeleri olmak üzere, Avrupa ve Orta Asya'ya düzenli olarak ihracat yapmaktayız. 15'ten fazla ülkeye ihracat deneyimimiz bulunmaktadır. Uluslararası standartlara uygun üretim yapıyor ve gerekli tüm belgelendirme süreçlerini tamamlıyoruz.",
     category: "general",
   },
   {
-    id: 6,
+    id: 5,
     question: "Çuvalların dayanıklılık süresi ne kadardır?",
     answer:
       "Çuvallarımız, doğru koşullarda saklandığında ve kullanıldığında uzun yıllar dayanıklılığını koruyabilmektedir. PP çuvallarımız ortalama 3-5 yıl, jüt çuvallarımız 2-3 yıl dayanıklılık göstermektedir. Ürünlerimiz UV koruması ve nem direnci gibi özelliklere sahiptir.",
     category: "quality",
   },
   {
-    id: 7,
+    id: 6,
     question: "Numune talep edebilir miyiz?",
     answer:
       "Evet, potansiyel müşterilerimize ürünlerimizin kalitesini göstermek için ücretsiz numune gönderimi yapıyoruz. Numune talebiniz için web sitemiz üzerinden veya telefon ile iletişime geçebilirsiniz. Kargo ücreti tarafınızdan karşılanmaktadır.",
     category: "general",
   },
   {
-    id: 8,
+    id: 7,
     question: "Özel ebatlarda çuval üretimi yapıyor musunuz?",
     answer:
       "Evet, standart ebatlarımızın yanı sıra, müşterilerimizin ihtiyaçlarına özel ebatlarda çuval üretimi yapabiliyoruz. Özel ebat talebiniz için teknik ekibimizle görüşmenizi öneririz. Minimum sipariş miktarları özel üretimler için farklılık gösterebilir.",
     category: "products",
-  },
-  {
-    id: 9,
-    question: "Ödeme koşullarınız nelerdir?",
-    answer:
-      "Ödeme koşullarımız müşteri profiline ve sipariş miktarına göre değişmektedir. Genellikle %30 peşin, %70 sevkiyat öncesi ödeme koşulu uygulanmaktadır. Uzun vadeli iş ortaklıklarında farklı ödeme seçenekleri sunabilmekteyiz. Detaylar için satış departmanımızla görüşebilirsiniz.",
-    category: "orders",
-  },
-  {
-    id: 10,
-    question: "Kalite sertifikalarınız nelerdir?",
-    answer:
-      "ISO 9001 Kalite Yönetim Sistemi, ISO 14001 Çevre Yönetim Sistemi sertifikalarımız bulunmaktadır. Ayrıca gıda sektörü için FDA ve CE sertifikalarımız mevcuttur. Tüm sertifikalarımız düzenli olarak yenilenmekte ve denetlenmektedir.",
-    category: "quality",
-  },
-  {
-    id: 11,
-    question: "Biyobozunur çuvallarınız hakkında bilgi alabilir miyim?",
-    answer:
-      "Biyobozunur çuvallarımız, doğada 2-3 yıl içinde tamamen çözünebilen çevre dostu malzemelerden üretilmektedir. Özellikle organik tarım ürünleri ve çevre bilincine sahip firmalar için ideal bir çözümdür. Bu ürünümüz henüz pilot üretim aşamasındadır ve yakında seri üretime geçilecektir.",
-    category: "products",
-    new: true,
-  },
-  {
-    id: 12,
-    question: "Teknik destek hizmeti veriyor musunuz?",
-    answer:
-      "Evet, satış sonrası teknik destek hizmeti vermekteyiz. Ürün kullanımı, depolama koşulları ve optimum performans için gerekli bilgileri müşterilerimizle paylaşıyoruz. Teknik ekibimiz 7/24 ulaşılabilir durumdadır.",
-    category: "general",
   },
 ]
 
@@ -199,21 +154,23 @@ export default function FAQPage() {
               <div className="w-16 h-1 bg-gradient-to-r from-red-500 to-navy-500 rounded-full"></div>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              {popularFAQs.map((faq, index) => (
-                <motion.div
-                  key={faq.id}
-                  className="bg-gradient-to-br from-navy-50 to-red-50 p-6 rounded-xl border border-navy-100 hover:shadow-lg transition-all duration-300"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ y: -5 }}
-                >
-                  <h3 className="font-semibold gradient-text mb-3 text-sm">{faq.question}</h3>
-                  <p className="text-muted-foreground text-xs line-clamp-3">{faq.answer}</p>
-                </motion.div>
-              ))}
+            <div className="flex justify-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 max-w-4xl">
+                {popularFAQs.map((faq, index) => (
+                  <motion.div
+                    key={faq.id}
+                    className="bg-gradient-to-br from-navy-50 to-red-50 p-6 rounded-xl border border-navy-100 hover:shadow-lg transition-all duration-300"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    whileHover={{ y: -5 }}
+                  >
+                    <h3 className="font-semibold gradient-text mb-3 text-sm">{faq.question}</h3>
+                    <p className="text-muted-foreground text-xs line-clamp-3">{faq.answer}</p>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -301,7 +258,11 @@ export default function FAQPage() {
                 <Phone className="mr-2 h-4 w-4" />
                 +90 342 123 4567
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 button-3d">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white text-white hover:bg-white/10 hover:text-white button-3d"
+              >
                 <Mail className="mr-2 h-4 w-4" />
                 info@tunasentetik.com
               </Button>

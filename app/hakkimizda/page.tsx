@@ -12,8 +12,8 @@ const features = [
   },
   {
     icon: <Clock className="h-8 w-8 text-red-500" />,
-    title: "20+ Yıllık Tecrübe",
-    description: "Sektörde 20 yılı aşkın deneyimimizle müşterilerimize en iyi hizmeti sunuyoruz.",
+    title: "40+ Yıllık Tecrübe",
+    description: "Sektörde 40 yılı aşkın deneyimimizle müşterilerimize en iyi hizmeti sunuyoruz.",
   },
   {
     icon: <Users className="h-8 w-8 text-red-500" />,
@@ -51,11 +51,12 @@ const values = [
 ]
 
 const timeline = [
-  { year: "2003", event: "Tuna Sentetik'in kuruluşu" },
-  { year: "2010", event: "ISO 9001 Kalite Yönetim Sistemi sertifikası" },
-  { year: "2015", event: "İhracata başlangıç" },
-  { year: "2020", event: "Üretim kapasitesinin iki katına çıkarılması" },
-  { year: "2025", event: "15+ ülkeye ihracat ve sürdürülebilir ürün geliştirme" },
+  { year: "1984", event: "TUNA ŞİRKETLER GRUBU'nun Huzeyfe Durmaz tarafından kuruluşu" },
+  { year: "1990", event: "Sentetik dokuma kumaş üretiminde uzmanlaşma" },
+  { year: "2000", event: "Modern üretim tesislerinin kurulması" },
+  { year: "2010", event: "İhracata başlangıç ve uluslararası sertifikasyonlar" },
+  { year: "2020", event: "Teknolojik yenileme ve kapasite artırımı" },
+  { year: "2024", event: "5+ ülkeye ihracat ve sürdürülebilir ürün geliştirme" },
 ]
 
 export default function AboutPage() {
@@ -76,8 +77,8 @@ export default function AboutPage() {
           >
             <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6">Hakkımızda</h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Tuna Sentetik olarak Gaziantep'te kurulduğumuz günden bu yana kaliteli çuval üretimi konusunda sektörün
-              öncülerinden biri olmayı başardık.
+              TUNA ŞİRKETLER GRUBU olarak 1984 yılından bu yana sentetik dokuma kumaş ve çuval sektöründe kaliteli
+              üretim yaparak sektörün öncülerinden biri olmayı başardık.
             </p>
           </motion.div>
 
@@ -88,22 +89,23 @@ export default function AboutPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h2 className="text-3xl font-bold gradient-text">Tuna Sentetik Hikayesi</h2>
+              <h2 className="text-3xl font-bold gradient-text">TUNA GROUP Hikayesi</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  2003 yılında Gaziantep'te kurulan Tuna Sentetik, kurulduğu günden bu yana müşteri memnuniyetini ön
-                  planda tutarak, yüksek kaliteli çuval üretimi konusunda kendini sürekli geliştirmiştir.
+                  TUNA ŞİRKETLER GRUBU'nun ilk temelleri 1984 yılında HUZEYFE DURMAZ tarafından atılmış, TUNA GROUP
+                  faaliyetine sentetik dokuma kumaş ve çuval sektöründe üretim yaparak başlamıştır.
                 </p>
                 <p>
-                  Başlangıçta küçük bir atölyede üretim yapan firmamız, bugün modern tesislerinde günlük 50.000 adet
-                  çuval üretim kapasitesine ulaşmıştır. Tarım, gıda, inşaat ve tekstil sektörlerine yönelik çeşitli ebat
-                  ve özelliklerde çuval üretimi yapan firmamız, müşterilerimizin ihtiyaçlarına özel çözümler
-                  sunmaktadır.
+                  Ülkesine ve çalışanlarına fayda sağlamayı amaçlayan TUNA GROUP, sistemini sürekli yenilemeye ve
+                  iyileştirmeye yönelik şirket kültürünü yaratarak, teknolojide değişimi ve gelişimi izleyerek, yeni
+                  yatırımlar, yeni alanlar belirleyerek pazarda etkin pay sahibi olmak için çalışmalarını
+                  sürdürmektedir.
                 </p>
                 <p>
-                  Sürdürülebilir üretim anlayışımız ve çevreye duyarlı yaklaşımımızla, sektörde fark yaratmaya devam
-                  ediyoruz. Geri dönüştürülebilir malzemeler kullanarak doğaya katkı sağlıyor, gelecek nesillere daha
-                  yaşanabilir bir dünya bırakmak için çalışıyoruz.
+                  40 yılı aşkın deneyimimizle, müşteri memnuniyetini ön planda tutarak, endüstriyel ve ticari
+                  sektörlerin ihtiyaçlarına uygun yüksek kaliteli PP çuval üretimi gerçekleştirmekteyiz. Üretim
+                  süreçlerimize en son teknolojik yenilikleri entegre ederek, çevreye duyarlı yaklaşımımızla topluma
+                  değer katmaya devam ediyoruz.
                 </p>
               </div>
             </motion.div>
@@ -115,12 +117,7 @@ export default function AboutPage() {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl">
-                <Image
-                  src="/placeholder.svg?height=600&width=800"
-                  alt="Tuna Sentetik Üretim Tesisi"
-                  fill
-                  className="object-cover"
-                />
+                <Image src="/corporate-building.jpeg" alt="TUNA GROUP Kurumsal Merkez" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-900/30 to-transparent"></div>
               </div>
             </motion.div>
@@ -178,15 +175,16 @@ export default function AboutPage() {
               <div className="bg-white p-8 rounded-2xl shadow-lg">
                 <h3 className="text-2xl font-bold gradient-text mb-4">Misyonumuz</h3>
                 <p className="text-muted-foreground">
-                  Müşterilerimizin ihtiyaçlarına uygun, yüksek kaliteli ve çevre dostu çuval çözümleri sunarak, sektörde
-                  güvenilir bir iş ortağı olmak ve ülke ekonomisine katkı sağlamak.
+                  Endüstriyel ve ticari sektörlerin ihtiyaçlarına uygun, yüksek kaliteli PP çuval üretimi
+                  gerçekleştirmek. Müşteri memnuniyetini ve iş birliğini ön planda tutarak, üretim süreçlerimize en son
+                  teknolojik yenilikleri entegre etmek ve çevreye duyarlı yaklaşımımızla topluma değer katmak.
                 </p>
               </div>
               <div className="bg-white p-8 rounded-2xl shadow-lg">
                 <h3 className="text-2xl font-bold gradient-text mb-4">Vizyonumuz</h3>
                 <p className="text-muted-foreground">
-                  Çuval üretiminde ulusal ve uluslararası pazarda lider konuma gelerek, yenilikçi ürünler ve
-                  sürdürülebilir üretim anlayışıyla sektöre yön veren bir firma olmak.
+                  Sentetik dokuma kumaş ve çuval üretiminde ulusal ve uluslararası pazarda lider konuma gelerek,
+                  yenilikçi ürünler ve sürdürülebilir üretim anlayışıyla sektöre yön veren bir firma olmak.
                 </p>
               </div>
             </motion.div>
@@ -234,7 +232,7 @@ export default function AboutPage() {
           >
             <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-4">Tarihçemiz</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Kuruluşumuzdan bugüne kadar olan yolculuğumuz
+              Kuruluşumuzdan bugüne kadar olan 40 yıllık yolculuğumuz
             </p>
           </motion.div>
 

@@ -9,118 +9,113 @@ import Image from "next/image"
 
 const categories = [
   { id: "all", name: "Tüm Haberler" },
-  { id: "company", name: "Şirket Haberleri" },
-  { id: "product", name: "Ürün Haberleri" },
-  { id: "export", name: "İhracat" },
-  { id: "environment", name: "Çevre" },
+  { id: "product", name: "Ürün Bilgileri" },
+  { id: "guide", name: "Kullanım Kılavuzları" },
+  { id: "technical", name: "Teknik Bilgiler" },
 ]
 
 const news = [
   {
     id: 1,
-    title: "Tuna Sentetik Üretim Kapasitesini İki Katına Çıkardı",
-    summary: "Yeni makine yatırımlarımızla üretim kapasitemizi iki katına çıkardık ve 20 yeni istihdam sağladık.",
-    category: "company",
-    date: "15 Mayıs 2025",
-    readTime: "3 dk",
-    author: "Tuna Sentetik",
-    image: "/placeholder.svg?height=400&width=600",
+    title: "Big Bag Çuvallar: Endüstriyel Taşımacılıkta Devrim",
+    summary:
+      "Big Bag çuvalların kullanım alanları, avantajları ve doğru seçim kriterleri hakkında bilmeniz gerekenler.",
+    category: "product",
+    date: "15 Aralık 2024",
+    readTime: "5 dk",
+    author: "Tuna Sentetik Uzmanları",
+    image: "/news/business-document.jpeg",
     featured: true,
     content: `
-      <p>Tuna Sentetik olarak, artan talepleri karşılamak ve müşterilerimize daha hızlı hizmet verebilmek amacıyla üretim kapasitemizi iki katına çıkardık.</p>
+      <p>Big Bag çuvallar, endüstriyel taşımacılık ve depolama sektöründe vazgeçilmez bir çözüm haline gelmiştir. Bu büyük kapasiteli çuvallar, 500 kg ile 2000 kg arasında değişen yük kapasiteleri ile birçok sektörde kullanılmaktadır.</p>
       
-      <p>Gaziantep Organize Sanayi Bölgesi'ndeki tesisimize yaptığımız yeni makine yatırımlarıyla, günlük üretim kapasitemiz 25.000 adetten 50.000 adede yükseldi. Bu artış, siparişlerin daha kısa sürede teslim edilmesini sağlayacak ve ihracat hedeflerimize ulaşmamızda önemli bir rol oynayacak.</p>
+      <h3>Big Bag Çuvalların Temel Özellikleri</h3>
+      <p>Big Bag çuvallar, polipropilen dokuma kumaştan üretilir ve yüksek dayanıklılık sağlar. FIBC (Flexible Intermediate Bulk Container) olarak da bilinen bu çuvallar, özel tasarımları sayesinde güvenli taşıma imkanı sunar.</p>
       
-      <h3>Teknolojik Yatırımlar</h3>
-      <p>Yeni üretim hatlarımız, en son teknoloji ile donatılmış olup, enerji verimliliği yüksek ve çevre dostu özelliklere sahiptir. Bu yatırımla birlikte, 20 yeni istihdam sağlayarak bölge ekonomisine katkıda bulunmaktan da gurur duyuyoruz.</p>
+      <h3>Kullanım Alanları</h3>
+      <p><strong>İnşaat Sektörü:</strong> Çimento, kum, çakıl gibi malzemelerin taşınması</p>
+      <p><strong>Tarım Sektörü:</strong> Tahıl, gübre, yem gibi ürünlerin depolanması</p>
+      <p><strong>Kimya Sektörü:</strong> Granül ve toz halindeki kimyasalların güvenli taşınması</p>
+      <p><strong>Gıda Sektörü:</strong> Şeker, un, bakliyat gibi gıda maddelerinin hijyenik taşınması</p>
       
-      <p>Tuna Sentetik olarak, kaliteden ödün vermeden büyümeye ve müşterilerimize en iyi hizmeti sunmaya devam edeceğiz.</p>
+      <h3>Avantajları</h3>
+      <p>• Yüksek yük kapasitesi (500-2000 kg)<br>
+      • Ekonomik taşıma çözümü<br>
+      • Tekrar kullanılabilir<br>
+      • Forklift ile kolay taşıma<br>
+      • Depolama alanından tasarruf</p>
+      
+      <h3>Seçim Kriterleri</h3>
+      <p>Big Bag seçerken taşınacak malzemenin özelliklerini, ağırlığını ve kullanım koşullarını dikkate almak önemlidir. Tuna Sentetik olarak, müşterilerimizin ihtiyaçlarına özel Big Bag çözümleri sunuyoruz.</p>
     `,
   },
   {
     id: 2,
-    title: "Çevre Dostu Yeni Ürün: Biyobozunur Çuvallar",
-    summary: "Doğada 2-3 yıl içinde tamamen çözünebilen çevre dostu çuvallarımızı piyasaya sürdük.",
-    category: "environment",
-    date: "3 Nisan 2025",
+    title: "Polipropilen Çuvalların Faydaları ve Kullanım Alanları",
+    summary:
+      "PP çuvalların neden tercih edildiği, hangi sektörlerde kullanıldığı ve avantajları hakkında detaylı bilgiler.",
+    category: "guide",
+    date: "8 Aralık 2024",
     readTime: "4 dk",
-    author: "Ar-Ge Ekibi",
-    image: "/placeholder.svg?height=400&width=600",
+    author: "Ürün Uzmanları",
+    image: "/news/business-success.jpeg",
     content: `
-      <p>Tuna Sentetik olarak, sürdürülebilirlik hedeflerimiz doğrultusunda geliştirdiğimiz yeni ürünümüz biyobozunur çuvalları piyasaya sürdük.</p>
+      <p>Polipropilen (PP) çuvallar, dayanıklılığı ve çok yönlülüğü ile paketleme sektörünün vazgeçilmez ürünleri arasında yer almaktadır. Dokuma polipropilen kumaştan üretilen bu çuvallar, birçok avantaj sunmaktadır.</p>
       
-      <p>Doğada 2-3 yıl içinde tamamen çözünebilen bu çevre dostu çuvallar, özellikle organik tarım ürünleri ve gıda sektörü için ideal bir paketleme çözümü sunuyor.</p>
+      <h3>Polipropilen Çuvalların Temel Özellikleri</h3>
+      <p>PP çuvallar, polipropilen ipliklerinin dokunmasıyla elde edilen dayanıklı bir yapıya sahiptir. Su geçirmez, UV dayanımlı ve kimyasal maddelere karşı dirençli özellikleri bulunmaktadır.</p>
       
-      <h3>Ar-Ge Çalışmaları</h3>
-      <p>Ar-Ge ekibimizin uzun çalışmaları sonucu geliştirilen biyobozunur çuvallarımız, dayanıklılık ve fonksiyonellikten ödün vermeden çevre dostu bir çözüm sunuyor.</p>
+      <h3>Başlıca Avantajları</h3>
+      <p><strong>Dayanıklılık:</strong> Yırtılma ve delinmeye karşı yüksek direnç</p>
+      <p><strong>Su Geçirmezlik:</strong> Nem ve suya karşı koruma</p>
+      <p><strong>UV Koruması:</strong> Güneş ışınlarına karşı dayanıklılık</p>
+      <p><strong>Ekonomiklik:</strong> Uygun maliyet ve uzun kullanım ömrü</p>
+      <p><strong>Çevre Dostu:</strong> Geri dönüştürülebilir malzeme</p>
       
-      <p>Bu ürünümüzle, Türkiye'de bir ilke imza atmanın gururunu yaşıyoruz.</p>
+      <h3>Kullanım Alanları</h3>
+      <p><strong>Tarım:</strong> Buğday, arpa, mısır, pirinç gibi tahılların depolanması</p>
+      <p><strong>Gıda:</strong> Un, şeker, bakliyat, baharat paketleme</p>
+      <p><strong>İnşaat:</strong> Çimento, alçı, kireç gibi yapı malzemeleri</p>
+      <p><strong>Kimya:</strong> Granül plastik, gübre, kimyasal maddeler</p>
+      
+      <h3>Kalite Standartları</h3>
+      <p>Tuna Sentetik olarak ürettiğimiz PP çuvallar, uluslararası kalite standartlarına uygun olarak üretilmektedir. Gıda ile temas edebilir sertifikalarımız bulunmaktadır.</p>
     `,
   },
   {
     id: 3,
-    title: "İhracatta Rekor: %40 Artış Sağlandı",
-    summary: "2025'in ilk çeyreğinde ihracat rakamlarımızda geçen yılın aynı dönemine göre %40'lık artış.",
-    category: "export",
-    date: "21 Mart 2025",
-    readTime: "2 dk",
-    author: "İhracat Departmanı",
-    image: "/placeholder.svg?height=400&width=600",
-    content: `
-      <p>Tuna Sentetik olarak, 2025 yılının ilk çeyreğinde ihracat rakamlarımızda geçen yılın aynı dönemine göre %40'lık bir artış sağlayarak şirket tarihimizin en yüksek ihracat rakamına ulaştık.</p>
-      
-      <p>Başta Orta Doğu ve Afrika ülkeleri olmak üzere, Avrupa ve Orta Asya pazarlarında da etkinliğimizi artırdık.</p>
-      
-      <h3>Hedef Pazarlar</h3>
-      <p>Özellikle Almanya, Fransa, Birleşik Arap Emirlikleri ve Mısır'a olan ihracatımızdaki artış, toplam ihracat rakamlarımıza önemli katkı sağladı.</p>
-    `,
-  },
-  {
-    id: 4,
-    title: "Yeni PP Çuval Serisi Tanıtıldı",
-    summary: "Gelişmiş özelliklerle donatılmış yeni PP çuval serimiz müşterilerimizle buluştu.",
-    category: "product",
-    date: "10 Şubat 2025",
+    title: "CF İplik Nedir? Özellikleri ve Kullanım Alanları",
+    summary: "Continuous Filament (CF) ipliğin teknik özellikleri, üretim süreci ve hangi uygulamalarda kullanıldığı.",
+    category: "technical",
+    date: "1 Aralık 2024",
     readTime: "3 dk",
-    author: "Ürün Geliştirme",
-    image: "/placeholder.svg?height=400&width=600",
+    author: "Teknik Ekip",
+    image: "/news/business-meeting.jpeg",
     content: `
-      <p>Müşterilerimizin geri bildirimlerini değerlendirerek geliştirdiğimiz yeni PP çuval serimizi tanıttık.</p>
+      <p>CF İplik (Continuous Filament), polipropilen hammaddesinden kesintisiz filament halinde üretilen yüksek kaliteli bir iplik türüdür. Dokuma ve örgü endüstrisinde yaygın olarak kullanılmaktadır.</p>
       
-      <p>Yeni serimiz, daha yüksek dayanıklılık, gelişmiş UV koruması ve çeşitli renk seçenekleri sunuyor.</p>
+      <h3>CF İpliğin Teknik Özellikleri</h3>
+      <p>CF iplik, sürekli filament yapısı sayesinde yüksek mukavemet ve düşük uzama özelliklerine sahiptir. 300-500 denye aralığında üretilen bu iplikler, özel UV katkıları ile güneş ışınlarına karşı dayanıklıdır.</p>
       
-      <h3>Teknik Özellikler</h3>
-      <p>50-120 gr/m² ağırlık seçenekleri, çeşitli ebatlar ve özel baskı imkanları ile müşterilerimizin tüm ihtiyaçlarını karşılıyor.</p>
-    `,
-  },
-  {
-    id: 5,
-    title: "ISO 14001 Çevre Yönetim Sistemi Sertifikası",
-    summary: "Çevreye olan sorumluluğumuz kapsamında ISO 14001 sertifikasını aldık.",
-    category: "environment",
-    date: "28 Ocak 2025",
-    readTime: "2 dk",
-    author: "Kalite Departmanı",
-    image: "/placeholder.svg?height=400&width=600",
-    content: `
-      <p>Tuna Sentetik olarak çevreye olan sorumluluğumuz kapsamında ISO 14001 Çevre Yönetim Sistemi sertifikasını aldık.</p>
+      <h3>Üretim Süreci</h3>
+      <p>Polipropilen granülleri yüksek sıcaklıkta eritilerek özel nozüllerden geçirilir. Bu süreçte kesintisiz filamentler elde edilir ve soğutma işleminden sonra bobinlere sarılır.</p>
       
-      <p>Bu sertifika, çevre dostu üretim süreçlerimizi ve sürdürülebilirlik hedeflerimizi tescillemiştir.</p>
-    `,
-  },
-  {
-    id: 6,
-    title: "Gaziantep Sanayi Odası İşbirliği",
-    summary: "Gaziantep Sanayi Odası ile stratejik işbirliği anlaşması imzaladık.",
-    category: "company",
-    date: "15 Ocak 2025",
-    readTime: "2 dk",
-    author: "Yönetim",
-    image: "/placeholder.svg?height=400&width=600",
-    content: `
-      <p>Bölgesel kalkınmaya katkı sağlamak amacıyla Gaziantep Sanayi Odası ile stratejik işbirliği anlaşması imzaladık.</p>
+      <h3>Kullanım Alanları</h3>
+      <p><strong>Çuval Üretimi:</strong> PP çuval dokumada ana hammadde</p>
+      <p><strong>Jeotekstil:</strong> İnşaat sektöründe zemin güçlendirme</p>
+      <p><strong>Halı Sektörü:</strong> Halı altı ve kenar bantları</p>
+      <p><strong>Ambalaj:</strong> Esnek ambalaj malzemeleri</p>
+      <p><strong>Tarım:</strong> Sera örtüleri ve tarım tekstilleri</p>
       
-      <p>Bu işbirliği kapsamında genç girişimcilere mentorluk ve sektörel eğitimler vereceğiz.</p>
+      <h3>Avantajları</h3>
+      <p>• Yüksek mukavemet<br>
+      • Kimyasal dayanıklılık<br>
+      • UV koruması<br>
+      • Düşük nem emme<br>
+      • Gıda ile temas uygunluğu</p>
+      
+      <h3>Kalite Kontrol</h3>
+      <p>Tuna Sentetik'te üretilen CF iplikler, modern laboratuvar imkanlarıyla test edilir ve uluslararası standartlara uygunluğu sağlanır.</p>
     `,
   },
 ]
@@ -135,14 +130,12 @@ export default function NewsPage() {
 
   const getCategoryColor = (category: string) => {
     switch (category) {
-      case "company":
-        return "bg-blue-500"
       case "product":
+        return "bg-blue-500"
+      case "guide":
         return "bg-green-500"
-      case "export":
+      case "technical":
         return "bg-purple-500"
-      case "environment":
-        return "bg-emerald-500"
       default:
         return "bg-gray-500"
     }
@@ -163,9 +156,9 @@ export default function NewsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6">Haberler</h1>
+            <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6">Ürün Rehberi</h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Tuna Sentetik'ten son gelişmeler, yenilikler ve sektörel haberler
+              Ürünlerimiz hakkında detaylı bilgiler, kullanım kılavuzları ve teknik özellikler
             </p>
           </motion.div>
 
@@ -204,7 +197,7 @@ export default function NewsPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-2xl font-bold gradient-text mb-2">Öne Çıkan Haber</h2>
+              <h2 className="text-2xl font-bold gradient-text mb-2">Öne Çıkan Rehber</h2>
               <div className="w-16 h-1 bg-gradient-to-r from-red-500 to-navy-500 rounded-full"></div>
             </motion.div>
 
@@ -264,7 +257,7 @@ export default function NewsPage() {
       {/* News Grid */}
       <section className="py-20 bg-gradient-to-br from-navy-50/50 via-white to-red-50/50">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {regularNews.map((item, index) => (
               <motion.div
                 key={item.id}
@@ -287,7 +280,8 @@ export default function NewsPage() {
                     <Badge className={`${getCategoryColor(item.category)} text-white`}>
                       {categories
                         .find((cat) => cat.id === item.category)
-                        ?.name.replace("Haberleri", "")
+                        ?.name.replace("Bilgileri", "")
+                        .replace("Kılavuzları", "")
                         .replace("Tüm ", "")}
                     </Badge>
                   </div>
@@ -352,7 +346,8 @@ export default function NewsPage() {
                     <Badge className={`${getCategoryColor(selectedNews.category)} text-white`}>
                       {categories
                         .find((cat) => cat.id === selectedNews.category)
-                        ?.name.replace("Haberleri", "")
+                        ?.name.replace("Bilgileri", "")
+                        .replace("Kılavuzları", "")
                         .replace("Tüm ", "")}
                     </Badge>
                   </div>

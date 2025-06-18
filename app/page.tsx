@@ -516,6 +516,60 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Company Video Section */}
+      <section className="py-20 bg-gradient-to-br from-navy-50 via-white to-red-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-4">Üretim Süreçlerimiz</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Modern tesisimizde gerçekleştirdiğimiz üretim süreçlerini yakından inceleyin
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-navy-100 to-red-100 p-2">
+              <div className="relative rounded-xl overflow-hidden bg-black">
+                <video
+                  className="w-full h-auto max-h-[600px] object-cover"
+                  controls
+                  preload="metadata"
+                  poster="/production-facility.jpeg"
+                >
+                  <source src="/company-video.mp4" type="video/mp4" />
+                  Tarayıcınız video oynatmayı desteklemiyor.
+                </video>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+              </div>
+            </div>
+
+            <motion.div
+              className="text-center mt-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                40 yıllık tecrübemizle modern teknoloji ve geleneksel kaliteyi bir araya getiriyoruz. Üretim tesisimizde
+                her aşamada kalite kontrol uygulayarak, müşterilerimize en iyi ürünleri sunuyoruz.
+              </p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Section - Removed "Ürün Kataloğu" button */}
       <section className="py-20 bg-gradient-to-r from-navy-900 via-navy-800 to-red-900 text-white relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
