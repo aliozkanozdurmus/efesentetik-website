@@ -144,14 +144,14 @@ export default function FAQPage() {
         <section className="py-12 bg-white">
           <div className="container mx-auto px-4">
             <motion.div
-              className="mb-8"
+              className="mb-8 text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-2xl font-bold gradient-text mb-2">Popüler Sorular</h2>
-              <div className="w-16 h-1 bg-gradient-to-r from-red-500 to-navy-500 rounded-full"></div>
+              <div className="w-16 h-1 bg-gradient-to-r from-red-500 to-navy-500 rounded-full mx-auto"></div>
             </motion.div>
 
             <div className="flex justify-center">
@@ -254,17 +254,12 @@ export default function FAQPage() {
               Uzman ekibimiz size yardımcı olmak için hazır. Hemen iletişime geçin ve sorularınızın cevabını alın.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button size="lg" variant="secondary" className="bg-white text-navy-900 hover:bg-white/90 button-3d">
-                <Phone className="mr-2 h-4 w-4" />
-                +90 342 123 4567
-              </Button>
               <Button
                 size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white/10 hover:text-white button-3d"
+                className="gradient-bg-secondary text-white hover:opacity-90 button-3d"
+                onClick={() => (window.location.href = "/iletisim")}
               >
-                <Mail className="mr-2 h-4 w-4" />
-                info@tunasentetik.com
+                İletişim
               </Button>
             </div>
           </motion.div>

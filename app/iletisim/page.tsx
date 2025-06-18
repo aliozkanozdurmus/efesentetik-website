@@ -45,9 +45,10 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold gradient-text mb-2">Adres</h3>
                       <p className="text-muted-foreground">
-                        Gaziantep Organize Sanayi Bölgesi
+                        3. Organize Sanayi Bölgesi
                         <br />
-                        83120. Cadde No: 8<br />
+                        Kamil Şerbetçi Bulvarı No: 39
+                        <br />
                         Şehitkamil / Gaziantep
                       </p>
                     </div>
@@ -57,8 +58,7 @@ export default function ContactPage() {
                     <Phone className="h-6 w-6 text-red-500 mr-4 mt-1" />
                     <div>
                       <h3 className="font-semibold gradient-text mb-2">Telefon</h3>
-                      <p className="text-muted-foreground">+90 342 123 4567</p>
-                      <p className="text-muted-foreground">+90 342 123 4568 (Fax)</p>
+                      <p className="text-muted-foreground">+90 342 360 9850</p>
                     </div>
                   </div>
 
@@ -66,8 +66,7 @@ export default function ContactPage() {
                     <Mail className="h-6 w-6 text-red-500 mr-4 mt-1" />
                     <div>
                       <h3 className="font-semibold gradient-text mb-2">E-posta</h3>
-                      <p className="text-muted-foreground">info@tunasentetik.com</p>
-                      <p className="text-muted-foreground">satis@tunasentetik.com</p>
+                      <p className="text-muted-foreground">info@tunasentetik.com.tr</p>
                     </div>
                   </div>
 
@@ -88,14 +87,6 @@ export default function ContactPage() {
               </div>
 
               {/* Map */}
-              <div>
-                <h3 className="text-2xl font-bold gradient-text mb-4">Konum</h3>
-                <div className="aspect-video bg-white rounded-xl border border-navy-100 overflow-hidden shadow-lg">
-                  <div className="w-full h-full bg-gradient-to-br from-navy-100 to-navy-50 flex items-center justify-center">
-                    <p className="text-muted-foreground">Google Harita Yerleşimi</p>
-                  </div>
-                </div>
-              </div>
             </motion.div>
 
             {/* Contact Form */}
@@ -221,7 +212,12 @@ export default function ContactPage() {
               Acil durumlar için doğrudan arayabilir veya WhatsApp üzerinden mesaj gönderebilirsiniz.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button size="lg" variant="secondary" className="bg-white text-navy-900 hover:bg-white/90 button-3d">
+              <Button
+                size="lg"
+                variant="secondary"
+                className="bg-white text-navy-900 hover:bg-white/90 button-3d"
+                href="tel:+903423609850"
+              >
                 <Phone className="mr-2 h-4 w-4" />
                 Hemen Ara
               </Button>

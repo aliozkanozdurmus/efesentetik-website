@@ -1,8 +1,12 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Award, Clock, Users, TrendingUp, CheckCircle, Target, Leaf, Globe } from "lucide-react"
+import { Award, Clock, Users, TrendingUp, CheckCircle, Target, Leaf, Globe, MapPin, Phone, Mail } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
 
 const features = [
   {
@@ -220,6 +224,60 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Company Video Section */}
+      <section className="py-20 bg-gradient-to-br from-navy-50 via-white to-red-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-4">Üretim Süreçlerimiz</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Modern tesisimizde gerçekleştirdiğimiz üretim süreçlerini yakından inceleyin
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-navy-100 to-red-100 p-2">
+              <div className="relative rounded-xl overflow-hidden bg-black">
+                <video
+                  className="w-full h-auto max-h-[600px] object-cover"
+                  controls
+                  preload="metadata"
+                  poster="/production-facility.jpeg"
+                >
+                  <source src="/company-video.mp4" type="video/mp4" />
+                  Tarayıcınız video oynatmayı desteklemiyor.
+                </video>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+              </div>
+            </div>
+
+            <motion.div
+              className="text-center mt-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                40 yıllık tecrübemizle modern teknoloji ve geleneksel kaliteyi bir araya getiriyoruz. Üretim tesisimizde
+                her aşamada kalite kontrol uygulayarak, müşterilerimize en iyi ürünleri sunuyoruz.
+              </p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Timeline Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -232,7 +290,7 @@ export default function AboutPage() {
           >
             <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-4">Tarihçemiz</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Kuruluşumuzdan bugüne kadar olan 40 yıllık yolculuğumuz
+              1984'ten günümüze kadar olan gelişimimiz ve başarı hikayemiz
             </p>
           </motion.div>
 
@@ -258,6 +316,189 @@ export default function AboutPage() {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section - Removed "Ürün Kataloğu" button */}
+      <section className="py-20 bg-gradient-to-r from-navy-900 via-navy-800 to-red-900 text-white relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute left-0 top-0 h-[300px] w-[300px] bg-red-600/20 blur-[100px]" />
+          <div className="absolute right-0 bottom-0 h-[300px] w-[300px] bg-navy-600/20 blur-[100px]" />
+        </div>
+
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">İhtiyacınıza Özel Çuval Çözümleri</h2>
+            <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
+              40 yıllık tecrübemiz ve modern üretim teknolojimizle size en uygun çözümleri sunuyoruz. Hemen iletişime
+              geçin ve özel teklifinizi alın.
+            </p>
+            <div className="flex justify-center">
+              <Button
+                asChild
+                size="lg"
+                variant="secondary"
+                className="bg-white text-navy-900 hover:bg-white/90 button-3d"
+              >
+                <Link href="/iletisim">Teklif Alın</Link>
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section className="py-20 bg-gradient-to-br from-navy-50 via-white to-red-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-4">Bizimle İletişime Geçin</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Sorularınız ve talepleriniz için bizimle iletişime geçebilirsiniz
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <motion.div
+              className="space-y-8"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div>
+                <h3 className="text-2xl font-bold mb-6 gradient-text">İletişim Bilgileri</h3>
+                <div className="space-y-6">
+                  <div className="flex items-start">
+                    <MapPin className="h-6 w-6 text-red-500 mr-4 mt-1" />
+                    <div>
+                      <p className="font-semibold gradient-text mb-1">Adres</p>
+                      <p className="text-muted-foreground">
+                        Gaziantep Organize Sanayi Bölgesi, 83120. Cadde No: 8,
+                        <br />
+                        Şehitkamil / Gaziantep
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <Phone className="h-6 w-6 text-red-500 mr-4 mt-1" />
+                    <div>
+                      <p className="font-semibold gradient-text mb-1">Telefon</p>
+                      <p className="text-muted-foreground">+90 342 123 4567</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <Mail className="h-6 w-6 text-red-500 mr-4 mt-1" />
+                    <div>
+                      <p className="font-semibold gradient-text mb-1">E-posta</p>
+                      <p className="text-muted-foreground">info@tunasentetik.com</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl shadow-lg border border-navy-100">
+                <h4 className="text-lg font-semibold gradient-text mb-4">Çalışma Saatleri</h4>
+                <div className="space-y-2 text-sm">
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Pazartesi - Cuma:</span>
+                    <span className="font-medium">08:30 - 18:00</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Cumartesi:</span>
+                    <span className="font-medium">09:00 - 13:00</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Pazar:</span>
+                    <span className="font-medium">Kapalı</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="bg-white p-8 rounded-2xl shadow-xl border border-navy-100"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h3 className="text-2xl font-bold mb-6 gradient-text">İletişim Formu</h3>
+              <form className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <label htmlFor="name" className="text-sm font-medium text-navy-800">
+                      Ad Soyad *
+                    </label>
+                    <Input
+                      id="name"
+                      placeholder="Ad Soyad"
+                      className="border-navy-200 focus:border-red-400 focus:ring-red-400"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="email" className="text-sm font-medium text-navy-800">
+                      E-posta *
+                    </label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="E-posta"
+                      className="border-navy-200 focus:border-red-400 focus:ring-red-400"
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="phone" className="text-sm font-medium text-navy-800">
+                    Telefon
+                  </label>
+                  <Input
+                    id="phone"
+                    placeholder="Telefon"
+                    className="border-navy-200 focus:border-red-400 focus:ring-red-400"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="subject" className="text-sm font-medium text-navy-800">
+                    Konu *
+                  </label>
+                  <Input
+                    id="subject"
+                    placeholder="Konu"
+                    className="border-navy-200 focus:border-red-400 focus:ring-red-400"
+                    required
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="message" className="text-sm font-medium text-navy-800">
+                    Mesaj *
+                  </label>
+                  <Textarea
+                    id="message"
+                    placeholder="Mesajınız"
+                    rows={5}
+                    className="border-navy-200 focus:border-red-400 focus:ring-red-400"
+                    required
+                  />
+                </div>
+                <Button className="w-full gradient-bg-secondary text-white hover:opacity-90 button-3d">
+                  <span className="relative z-10">Gönder</span>
+                </Button>
+              </form>
+            </motion.div>
           </div>
         </div>
       </section>

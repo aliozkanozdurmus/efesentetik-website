@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Facebook, Twitter, Instagram, Linkedin, MapPin, Phone, Mail, Clock } from "lucide-react"
+import { MapPin, Phone, Mail, Clock } from "lucide-react" // Removed Facebook, Twitter, Instagram, Linkedin
 import Image from "next/image"
 
 export default function Footer() {
@@ -17,20 +17,7 @@ export default function Footer() {
               1984'ten bu yana sentetik dokuma kumaş ve çuval sektöründe faaliyet gösteren, kalite ve güvenilirlikte
               öncü firmamız.
             </p>
-            <div className="flex space-x-4">
-              <Link href="#" className="text-red-300 hover:text-red-200 transition-colors">
-                <Facebook className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="text-red-300 hover:text-red-200 transition-colors">
-                <Twitter className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="text-red-300 hover:text-red-200 transition-colors">
-                <Instagram className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="text-red-300 hover:text-red-200 transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </Link>
-            </div>
+            {/* Sosyal medya butonları kaldırıldı */}
           </div>
           <div>
             <h4 className="text-lg font-bold mb-4 gradient-text-light">Ürünlerimiz</h4>
