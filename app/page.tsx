@@ -137,7 +137,7 @@ export default function HomePage() {
             >
               <div className="space-y-6">
                 <motion.div
-                  className="inline-block"
+                  className="inline-block pt-8 md:pt-0"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.1 }}
