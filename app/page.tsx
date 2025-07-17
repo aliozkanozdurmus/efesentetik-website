@@ -22,6 +22,7 @@ import {
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { useState, useRef, useEffect } from "react" // useState, useRef, useEffect eklendi
 
 const stats = [
   { number: "40+", label: "Yıllık Tecrübe" },
@@ -52,36 +53,159 @@ const features = [
   },
 ]
 
+// Ürünler sayfasındaki güncel ürün verileri buraya taşındı
 const products = [
   {
-    title: "Polipropilen Dokuma Çuval",
-    description: "Un, şeker, bakliyat, hububat, tuz, kepek, yem, pirinç için ideal çözümler",
-    image: "/products/polipropilen-dokuma-cuval.webp",
-    features: ["Standart Çuval", "Lamineli Çuval", "Şeffaf Çuval", "Delikli Çuval"],
+    id: 1,
+    name: "Polipropilen Dokuma Çuval",
+    category: "cuval",
+    description:
+      "Cazip özellikleri nedeniyle PP çuvallar piyasada hızla popülerlik kazanmıştır ve günümüzde bunlar çeşitli endüstriler tarafından yaygın olarak benimsenmiştir. PP Torbalar, Un, şeker, bakliyat, tuz, kepek, yem, tekstil, kuruyemiş, gübre, çimento, granül halindeki kimyasalların vb. paketlenmesinde yaygın olarak kullanıldığı endüstriyel ambalajlama için ideal bir seçim haline gelmiştir.PP torbalar, çeşitli kalite, desen, baskı, renk, ebat ve farklı kapasitelerde PP dokuma kumaşlar kullanılarak hazırlanır.30-150 cm enlerinde çuval üretimi yapılabilir. Ağzı overloklu ya da sıcak kesim olarak üretilebilir. Rulodan ruloya 8 renge kadar flekso baskı yapılabilir. 125, 250, 500 ve 1000 adetlik balyalar halinde ambalajlanabilir. Rulo halinde (tubular) hortum kumaş şeklinde üretimi yapılabilir. İstenilen renklerde üretimi yapılabilir. PE iç torba manşet katlama ya da ağızdan dikişli olarak eklenebilir.",
+    images: ["/products/pp-woven-bag-colors.jpeg", "/products/pp-woven-bag-types.jpeg"],
+    features: ["Standart Çuval", "Lamineli Çuval", "Şeffaf Çuval", "Delikli Çuval", "OPP Kaplama", "Metalize Çuval"],
+    specs: {
+      kullanim: "Un, Şeker, Bakliyat, Hububat, Tuz, Kepek, Yem, Pirinç",
+      cesitler: "Standart, Lamineli, Şeffaf, Delikli, OPP Kaplama, Metalize",
+      ozellikler: "Kömür, Gübre, Granül, Kimyasallar, Kireç için lamineli çeşit",
+      ekstra: "Patates ve diğer sebzeler için delikli çeşit",
+    },
+    popular: true,
   },
   {
-    title: "Big Bag Çuvallar",
-    description: "500-2000 kg kapasiteli, endüstriyel kullanım için tasarlanmış",
-    image: "/products/big-bag.webp",
-    features: ["EFIBCA Sertifikalı", "Antistatik Seçenekler", "PE İç Torba", "4 Yüze Baskı"],
+    id: 2,
+    name: "Big Bag Çuvallar",
+    category: "cuval",
+    description:
+      "500-2000 kg kapasiteli, endüstriyel kullanım için tasarlanmış. EFIBCA sertifikalı ve antistatik seçenekleri mevcuttur.",
+    image: "/products/big-bag-types.jpeg",
+    features: [
+      "EFIBCA Sertifikalı",
+      "Antistatik Seçenekler",
+      "PE İç Torba",
+      "4 Yüze Baskı",
+      "Toz Fitili",
+      "Doküman Cebi",
+    ],
+    specs: {
+      swl: "500 - 2000 kg",
+      sf: "5:1 - 6:1",
+      kumaş: "Lamineli, Laminesiz",
+      antistatik: "Tüm modeller antistatik olarak üretilebilir",
+      sertifika: "EFIBCA akredite LABORDATA Enstitüsü testli",
+      seçenekler: "PE İç Torba, Toz Fitili, Doküman cebi, Etiket",
+    },
   },
   {
-    title: "Polipropilen CF İplik",
-    description: "Yüksek mukavemet, mükemmel mekanik özellikler ve kimyasal dayanım",
+    id: 3,
+    name: "Polipropilen CF İplik",
+    category: "iplik",
+    description: "Yüksek mukavemet, mükemmel mekanik özellikler ve kimyasal dayanım. 300-500 denye aralığında üretim.",
     image: "/products/polipropilen-cf-iplik.webp",
-    features: ["300-500 Denye", "UV Korumalı", "Gıda Uygunluğu", "Çift Kat Bükümlü"],
+    features: ["300-500 Denye", "UV Korumalı", "Gıda Uygunluğu", "Çift Kat Bükümlü", "S veya Z Büküm", "Özel Renkler"],
+    specs: {
+      mukavemet: "Yüksek ve Orta Mukavemet",
+      denye: "300-500 Denye",
+      filament: "50-72-100-144-200-400 Filament",
+      kesim: "Delta & Round kesimli",
+      bukum: "Düz / Puntalı / Bükümlü / Çift Kat Bükümlü",
+      ozellikler: "UV ve özel katkı maddeleri, gıda uygunluğu",
+    },
   },
   {
-    title: "Polipropilen Şerit İplik",
-    description: "Düz & fibrilize, yüksek mukavemet ve üstün dayanım özellikleri",
+    id: 4,
+    name: "Polipropilen Şerit İplik",
+    category: "iplik",
+    description: "Düz & fibrilize, yüksek mukavemet ve üstün dayanım özellikleri. 600-13.500 denye aralığında üretim.",
     image: "/products/polipropilen-serit-iplik.webp",
-    features: ["600-13.500 Denye", "2mm-15mm İp Eni", "Özel Renkler", "Size Özel Çözümler"],
+    features: ["600-13.500 Denye", "2mm-15mm İp Eni", "Özel Renkler", "Size Özel Çözümler", "UV Korumalı", "Fibrilize"],
+    specs: {
+      tip: "Düz & Fibrilize",
+      mukavemet: "Yüksek ve Orta Mukavemet",
+      denye: "600-13.500 Denye",
+      genislik: "2mm-15mm İp Eni",
+      renkler: "Müşteri talebi doğrultusunda istenilen renklerde",
+      ozellikler: "UV ve özel katkı maddeleri, size özel çözümler",
+    },
   },
   {
-    title: "Ventilli & Block Bottom Torba",
-    description: "Çimento, kireç, gübre, hububat için özel tasarım ventilli torbalar",
+    id: 5,
+    name: "Ventilli & Block Bottom Torba",
+    category: "torba",
+    description: "Çimento, kireç, gübre, hububat için özel tasarım. Sıfıra yakın fire ve maksimum istifleme imkanı.",
     image: "/products/ventilli-block-bottom-torba.webp",
-    features: ["Sıfıra Yakın Fire", "Ergonomik Dizayn", "Maksimum İstifleme", "Otomatik Sistem Uyumlu"],
+    features: [
+      "Sıfıra Yakın Fire",
+      "Ergonomik Dizayn",
+      "Maksimum İstifleme",
+      "Otomatik Sistem Uyumlu",
+      "Valf Sistemi",
+      "Kübik Dizayn",
+    ],
+    specs: {
+      kullanim: "Çimento, Kireç, Gübre, Hububat, Yem, Şeker, Un, Tuz, Pirinç, Alçı, Granul, Kimyasallar",
+      avantajlar: "En ağır yükleme şartlarında sıfıra yakın fire",
+      dayanim: "Suya ve neme üstün dayanım",
+      ozellikler: "Hava geçirgenliği, nefes aldırma özelliği",
+      sistem: "Manuel ve tam otomatik sistemler için ergonomik dizayn",
+      performans: "Minimum işçilik, maksimum hız, üstün performans",
+    },
+    new: true,
+  },
+  {
+    id: 6,
+    name: "Özel PP Dokumalar",
+    category: "ozel-dokumalar",
+    description:
+      "Müşterilerimizin özel ihtiyaçlarına yönelik, farklı renk, desen ve özelliklerde PP dokuma kumaşlar üretiyoruz. Yüksek kaliteli hammaddeler ve ileri teknoloji ile dayanıklı ve estetik çözümler sunuyoruz.",
+    images: [
+      "/products/pp-woven-roll-striped-1.jpeg",
+      "/products/pp-woven-patterns.jpeg",
+      "/products/pp-woven-production-1.jpeg",
+      "/products/pp-woven-roll-striped-2.jpeg",
+      "/products/pp-woven-roll-striped-3.jpeg",
+    ],
+    features: [
+      "Özel Renkler",
+      "Farklı Desenler",
+      "Yüksek Mukavemet",
+      "UV Korumalı",
+      "Geniş En Seçenekleri",
+      "Esnek Üretim",
+    ],
+    specs: {
+      kullanim: "Özel Ambalaj, Tarım, İnşaat, Endüstriyel Uygulamalar",
+      cesitler: "Rulo Kumaş, Özel Kesimler, Farklı Gramajlar",
+      ozellikler: "Suya Dayanıklı, Nefes Alabilen, Kimyasallara Dayanıklı",
+      ekstra: "Müşteriye Özel Çözümler, Hızlı Teslimat",
+    },
+    new: true,
+  },
+  {
+    id: 7,
+    name: "PP+BOPP Çuval",
+    category: "cuval",
+    description:
+      "BOPP Film tabakalarının birden çok renkli baskı yapılabilmesi, resme varan baskılar yapılabilmesi açısından bir çok sektörde yoğun talep görmektedir.İsteğe göre tek yüz veya çift yüz OPP Film kaplaması yapılabilir.BOPP Çuvallarının en büyük özelliği; kendi özel OPP tabakası sentetik çuvallara kaplanması sayesinde tüm nem ve su geçirmez özelliğe sahip olmasıdır.",
+    images: [
+      "/products/pp-bopp-coffee-bag.jpeg",
+      "/products/pp-bopp-fertilizer-bag-black.jpeg",
+      "/products/pp-bopp-fertilizer-bag-green.jpeg",
+    ],
+    features: [
+      "Çok Renkli Baskı",
+      "Resme Varan Baskı",
+      "Tek/Çift Yüz OPP Kaplama",
+      "Nem ve Su Geçirmez",
+      "Yüksek Kalite",
+      "Çeşitli Sektörler İçin",
+    ],
+    specs: {
+      kullanim: "Un, Şeker, Bakliyat, Tuz, Kepek, Yem, Tekstil, Kuruyemiş, Gübre, Çimento, Kimyasallar",
+      ozellikler: "Yüksek Çözünürlüklü Baskı, Dayanıklı Yapı, Uzun Ömürlü",
+      avantajlar: "Ürün Görünürlüğü, Marka Bilinirliği, Koruma",
+      ekstra: "Özel Boyut ve Tasarım Seçenekleri",
+    },
+    new: true,
   },
 ]
 
@@ -137,7 +261,7 @@ export default function HomePage() {
             >
               <div className="space-y-6">
                 <motion.div
-                  className="inline-block"
+                  className="inline-block pt-16 md:pt-0"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.1 }}
@@ -188,7 +312,7 @@ export default function HomePage() {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="border-navy-300 text-navy-800 hover:border-navy-500 button-3d"
+                  className="border-navy-300 text-navy-800 hover:border-navy-500 button-3d bg-transparent"
                 >
                   <Link href="/hakkimizda">Hikayemizi Keşfedin</Link>
                 </Button>
@@ -298,7 +422,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             {products.slice(0, 3).map((product, index) => (
               <motion.div
-                key={index}
+                key={product.id}
                 className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -307,16 +431,32 @@ export default function HomePage() {
                 whileHover={{ y: -5 }}
               >
                 <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={product.image || "/placeholder.svg"}
-                    alt={product.title}
-                    fill
-                    className="object-cover transition-transform duration-500 hover:scale-105"
-                  />
+                  {product.images ? (
+                    <div className="flex h-full w-full">
+                      {product.images.map((imgSrc, i) => (
+                        <div key={i} className="relative flex-1 min-w-0">
+                          <Image
+                            src={imgSrc || "/placeholder.svg"}
+                            alt={`${product.name} ${i + 1}`}
+                            fill
+                            className="object-cover transition-transform duration-500 hover:scale-105"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <Image
+                      src={product.image || "/placeholder.svg"}
+                      alt={product.name}
+                      fill
+                      className="object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                  )}
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold gradient-text mb-3">{product.title}</h3>
-                  <p className="text-muted-foreground mb-4">{product.description}</p>
+                  <h3 className="text-xl font-bold gradient-text mb-3">{product.name}</h3>
+                  {/* Açıklama bölümünü güncelliyoruz */}
+                  <ProductDescriptionWithToggle description={product.description} />
                   <div className="space-y-2">
                     {product.features.map((feature, i) => (
                       <div key={i} className="flex items-center text-sm">
@@ -334,7 +474,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {products.slice(3, 5).map((product, index) => (
               <motion.div
-                key={index + 3}
+                key={product.id}
                 className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -343,16 +483,32 @@ export default function HomePage() {
                 whileHover={{ y: -5 }}
               >
                 <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={product.image || "/placeholder.svg"}
-                    alt={product.title}
-                    fill
-                    className="object-cover transition-transform duration-500 hover:scale-105"
-                  />
+                  {product.images ? (
+                    <div className="flex h-full w-full">
+                      {product.images.map((imgSrc, i) => (
+                        <div key={i} className="relative flex-1 min-w-0">
+                          <Image
+                            src={imgSrc || "/placeholder.svg"}
+                            alt={`${product.name} ${i + 1}`}
+                            fill
+                            className="object-cover transition-transform duration-500 hover:scale-105"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <Image
+                      src={product.image || "/placeholder.svg"}
+                      alt={product.name}
+                      fill
+                      className="object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                  )}
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold gradient-text mb-3">{product.title}</h3>
-                  <p className="text-muted-foreground mb-4">{product.description}</p>
+                  <h3 className="text-xl font-bold gradient-text mb-3">{product.name}</h3>
+                  {/* Açıklama bölümünü güncelliyoruz */}
+                  <ProductDescriptionWithToggle description={product.description} />
                   <div className="space-y-2">
                     {product.features.map((feature, i) => (
                       <div key={i} className="flex items-center text-sm">
@@ -404,7 +560,7 @@ export default function HomePage() {
                   key={index}
                   className={`relative flex items-center mb-8 ${index % 2 === 0 ? "justify-start" : "justify-end"}`}
                   initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
@@ -693,6 +849,57 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+    </div>
+  )
+}
+
+// Yeni ProductDescriptionWithToggle bileşeni
+function ProductDescriptionWithToggle({ description }: { description: string }) {
+  const [showFullDescription, setShowFullDescription] = useState(false)
+  const [isOverflowing, setIsOverflowing] = useState(false)
+  const textRef = useRef<HTMLParagraphElement>(null)
+  const maxLines = 3
+
+  useEffect(() => {
+    if (textRef.current) {
+      // Metni başlangıçta kısıtlı olarak ayarla
+      textRef.current.style.webkitLineClamp = `${maxLines}`
+      const clampedClientHeight = textRef.current.clientHeight // Kısıtlı yükseklik
+
+      // Metni tam olarak göster
+      textRef.current.style.webkitLineClamp = "unset"
+      const fullScrollHeight = textRef.current.scrollHeight // Tam yükseklik
+
+      // Taşma olup olmadığını kontrol et
+      setIsOverflowing(fullScrollHeight > clampedClientHeight)
+
+      // showFullDescription durumuna göre clamp'i tekrar ayarla
+      textRef.current.style.webkitLineClamp = showFullDescription ? "unset" : `${maxLines}`
+    }
+  }, [description, showFullDescription])
+
+  const descriptionStyle = {
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    display: "-webkit-box",
+    WebkitBoxOrient: "vertical" as const,
+    WebkitLineClamp: showFullDescription ? "unset" : maxLines,
+  }
+
+  return (
+    <div className="mb-4">
+      <p ref={textRef} className="text-muted-foreground" style={descriptionStyle}>
+        {description}
+      </p>
+      {isOverflowing && (
+        <Button
+          variant="link"
+          onClick={() => setShowFullDescription(!showFullDescription)}
+          className="p-0 h-auto text-sm text-navy-600 hover:text-navy-800"
+        >
+          {showFullDescription ? "Daha Az Göster" : "Daha Fazlasını Göster"}
+        </Button>
+      )}
     </div>
   )
 }

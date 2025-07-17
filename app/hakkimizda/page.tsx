@@ -255,7 +255,7 @@ export default function AboutPage() {
                   preload="metadata"
                   poster="/production-facility.jpeg"
                 >
-                  <source src="/company-video.mp4" type="video/mp4" />
+                  <source src="https://stinvenireaz084550184237.blob.core.windows.net/invenirecomtr-website/WhatsApp%20Video%202025-06-14%20at%2012.35.24_588fdc09.mp4" type="video/mp4" />
                   Tarayıcınız video oynatmayı desteklemiyor.
                 </video>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
