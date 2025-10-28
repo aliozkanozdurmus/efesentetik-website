@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 import Link from "next/link"
+import ImageGalleryDialog from "@/components/image-gallery-dialog"
 
 const categories = [
   { id: "all", name: "Tüm Ürünler" },
@@ -172,9 +173,30 @@ const products = [
 
 export default function ProductsPage() {
   const [activeCategory, setActiveCategory] = useState("all")
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false)
+  const [currentProduct, setCurrentProduct] = useState<typeof products[0] | null>(null)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   const filteredProducts =
     activeCategory === "all" ? products : products.filter((product) => product.category === activeCategory)
+
+  const handleImageClick = (product: typeof products[0], imageIndex: number = 0) => {
+    setCurrentProduct(product)
+    setCurrentImageIndex(imageIndex)
+    setIsGalleryOpen(true)
+  }
+
+  const closeGallery = () => {
+    setIsGalleryOpen(false)
+    setCurrentProduct(null)
+    setCurrentImageIndex(0)
+  }
+
+  const getProductImages = (product: typeof products[0]) => {
+    if (product.images) return product.images
+    if (product.image) return [product.image]
+    return ["/placeholder.svg"]
+  }
 
   return (
     <div className="relative">
@@ -238,7 +260,7 @@ export default function ProductsPage() {
                 whileHover={{ y: -5 }}
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-                  <div className="relative h-64 md:h-auto overflow-hidden">
+                  <div className="relative h-64 md:h-auto overflow-hidden cursor-pointer group" onClick={() => handleImageClick(product)}>
                     {(product.id === 1 || product.id === 6 || product.id === 7) && product.images ? ( // Birden fazla görseli olan ürünler için
                       <div className="flex h-full w-full">
                         {product.images.map((imgSrc, i) => (
@@ -248,17 +270,37 @@ export default function ProductsPage() {
                               alt={`${product.name} ${i + 1}`}
                               fill
                               className="object-cover transition-transform duration-500 hover:scale-105"
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                handleImageClick(product, i)
+                              }}
                             />
+                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white bg-black/50 rounded-full p-3">
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                                </svg>
+                              </div>
+                            </div>
                           </div>
                         ))}
                       </div>
                     ) : (
-                      <Image
-                        src={product.image || "/placeholder.svg"}
-                        alt={product.name}
-                        fill
-                        className="object-cover transition-transform duration-500 hover:scale-105"
-                      />
+                      <div className="relative w-full h-full">
+                        <Image
+                          src={product.image || "/placeholder.svg"}
+                          alt={product.name}
+                          fill
+                          className="object-cover transition-transform duration-500 hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                          <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white bg-black/50 rounded-full p-3">
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
                     )}
                     <div className="absolute top-4 left-4 flex flex-col gap-2">
                       {product.popular && <Badge className="bg-red-500 text-white">Popüler</Badge>}
@@ -335,6 +377,17 @@ export default function ProductsPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* Image Gallery Dialog */}
+      {currentProduct && (
+        <ImageGalleryDialog
+          images={getProductImages(currentProduct)}
+          initialIndex={currentImageIndex}
+          isOpen={isGalleryOpen}
+          onClose={closeGallery}
+          productName={currentProduct.name}
+        />
+      )}
     </div>
   )
 }
