@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Globe, Phone, Mail, MapPin, ChevronDown, Sparkles, Home, Factory, Package, Newspaper, Images, HelpCircle } from "lucide-react"
+import { Menu, X, Globe, Phone, Mail, MapPin, ChevronDown, Sparkles, Home, Factory, Package, Newspaper, HelpCircle } from "lucide-react"
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 
@@ -13,7 +13,6 @@ const navigation = [
   { name: "Hakkımızda", href: "/hakkimizda", icon: <Factory className="w-5 h-5" /> },
   { name: "Ürünlerimiz", href: "/urunler", icon: <Package className="w-5 h-5" /> },
   { name: "Haberler", href: "/haberler", icon: <Newspaper className="w-5 h-5" /> },
-  { name: "Galeri", href: "/galeri", icon: <Images className="w-5 h-5" /> },
   { name: "S.S.S", href: "/sss", icon: <HelpCircle className="w-5 h-5" /> },
   { name: "İletişim", href: "/iletisim", icon: <Phone className="w-5 h-5" /> },
 ]
