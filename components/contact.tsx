@@ -61,7 +61,7 @@ export default function Contact() {
                   <Mail className="h-5 w-5 text-primary mr-3 mt-0.5" />
                   <div>
                     <p className="font-medium">E-posta</p>
-                    <p className="text-muted-foreground">info@efesentetik.com</p>
+                    <p className="text-muted-foreground">info@tunasentetik.com</p>
                   </div>
                 </div>
                 <div className="flex items-start">

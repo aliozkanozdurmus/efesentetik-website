@@ -201,27 +201,27 @@ export default function ProductsPage() {
   return (
     <div className="relative">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-navy-50 via-white to-red-50 overflow-hidden">
+      <section className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-br from-navy-50 via-white to-red-50 overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute right-0 top-0 h-[300px] w-[300px] bg-red-200/30 blur-[80px]" />
+          <div className="absolute right-0 top-0 h-[200px] sm:h-[300px] w-[200px] sm:w-[300px] bg-red-200/30 blur-[60px] sm:blur-[80px]" />
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <motion.div
-            className="text-center mb-16"
+            className="text-center mb-8 sm:mb-12 md:mb-16"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6">Ürünlerimiz</h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold gradient-text mb-4 sm:mb-6">Ürünlerimiz</h1>
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl sm:max-w-3xl mx-auto">
               1984'ten bu yana ürettiğimiz kaliteli polipropilen dokuma çuval, iplik ve torba çözümlerimiz
             </p>
           </motion.div>
 
           {/* Category Filter */}
           <motion.div
-            className="flex flex-wrap justify-center gap-3 mb-12"
+            className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -230,10 +230,11 @@ export default function ProductsPage() {
               <Button
                 key={category.id}
                 variant={activeCategory === category.id ? "default" : "outline"}
+                size="sm"
                 className={
                   activeCategory === category.id
-                    ? "gradient-bg-secondary text-white hover:opacity-90 button-3d"
-                    : "border-navy-300 text-navy-800 hover:border-navy-500 button-3d bg-transparent"
+                    ? "gradient-bg-secondary text-white hover:opacity-90 button-3d text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2"
+                    : "border-navy-300 text-navy-800 hover:border-navy-500 button-3d bg-transparent text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2"
                 }
                 onClick={() => setActiveCategory(category.id)}
               >
@@ -245,9 +246,9 @@ export default function ProductsPage() {
       </section>
 
       {/* Products Grid */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12">
             {filteredProducts.map((product, index) => (
               <motion.div
                 key={product.id}

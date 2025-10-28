@@ -267,123 +267,185 @@ export default function HomePage() {
 
   return (
     <div className="relative">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-navy-50 via-white to-red-50">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute right-0 top-0 h-[500px] w-[500px] bg-red-200/30 blur-[100px]" />
-          <div className="absolute bottom-0 left-0 h-[500px] w-[500px] bg-navy-200/20 blur-[100px]" />
-        </div>
+      {/* Hero Section - Creative Wide Design */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              className="space-y-8"
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center">
+            
+            {/* Left Content - 3 columns */}
+            <motion.div 
+              className="lg:col-span-3 text-navy-900"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 1, delay: 0.2 }}
             >
-              <div className="space-y-6">
-                <motion.div
-                  className="inline-block pt-16 md:pt-0"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.1 }}
-                >
-                  <span className="bg-gradient-to-r from-red-100 to-navy-100 text-red-700 px-4 py-2 rounded-full text-sm font-medium">
-                    1984'ten Bu Yana Güvenilir Kalite
-                  </span>
-                </motion.div>
-
-                <motion.h1
-                  className="text-4xl md:text-6xl font-bold leading-tight"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                >
-                  <span className="gradient-text">Polipropilen Dokuma</span>
-                  <br />
-                  <span className="text-navy-900">Çuval Üretiminde</span>
-                  <br />
-                  <span className="text-red-600">Türkiye'nin Lideri</span>
-                </motion.h1>
-
-                <motion.p
-                  className="text-xl text-muted-foreground max-w-lg leading-relaxed"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
-                >
-                  Tuna Şirketler Grubu olarak 1984'ten bu yana sentetik dokuma kumaş ve çuval sektöründe faaliyet
-                  göstermekteyiz. Endüstriyel ve ticari sektörlerin ihtiyaçlarına uygun, yüksek kaliteli PP çuval
-                  üretimi gerçekleştiriyoruz.
-                </motion.p>
-              </div>
-
+              {/* Badge */}
               <motion.div
-                className="flex flex-col sm:flex-row gap-4"
-                initial={{ opacity: 0, y: 20 }}
+                className="inline-flex items-center space-x-2 bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-3 rounded-full mb-8 shadow-lg"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
+                <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                <span className="font-medium">1984'ten Bu Yana Güvenilir Kalite</span>
+              </motion.div>
+
+              {/* Main Heading */}
+              <motion.h1
+                className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                <span className="block gradient-text">Polipropilen Dokuma</span>
+                <span className="block text-navy-900 mt-2">Çuval Üretiminde</span>
+                <span className="block text-red-600 font-bold mt-2">Türkiye'nin Lideri</span>
+              </motion.h1>
+
+              {/* Description */}
+              <motion.p
+                className="text-lg sm:text-xl text-gray-700 leading-relaxed mb-10 max-w-2xl"
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
+                Tuna Şirketler Grubu olarak 1984'ten bu yana sentetik dokuma kumaş ve çuval sektöründe faaliyet göstermekteyiz. 
+                Endüstriyel ve ticari sektörlerin ihtiyaçlarına uygun, yüksek kaliteli PP çuval üretimi gerçekleştiriyoruz.
+              </motion.p>
+
+              {/* CTA Buttons */}
+              <motion.div
+                className="flex flex-col sm:flex-row gap-4 mb-12"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+              >
                 <Button asChild size="lg" className="gradient-bg-secondary text-white hover:opacity-90 button-3d group">
-                  <Link href="/urunler">
-                    <span className="relative z-10">Ürünlerimizi İnceleyin</span>
-                    <ArrowRight className="ml-2 h-4 w-4 relative z-10 transition-transform group-hover:translate-x-1" />
+                  <Link href="/urunler" className="flex items-center">
+                    <span>Ürünlerimizi İnceleyin</span>
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
                 <Button
                   asChild
                   variant="outline"
                   size="lg"
-                  className="border-navy-300 text-navy-800 hover:border-navy-500 button-3d bg-transparent"
+                  className="border-red-300 text-red-700 hover:bg-red-50 hover:border-red-500 transition-all duration-300"
                 >
                   <Link href="/hakkimizda">Hikayemizi Keşfedin</Link>
                 </Button>
               </motion.div>
 
-              {/* Stats - Updated to remove 100K+ production */}
+              {/* Stats */}
               <motion.div
-                className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8"
-                initial={{ opacity: 0, y: 20 }}
+                className="grid grid-cols-3 gap-6 sm:gap-8"
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
+                transition={{ duration: 0.8, delay: 1 }}
               >
-                {stats.map((stat, index) => (
-                  <motion.div
-                    key={index}
-                    className="text-center"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <div className="text-3xl font-bold gradient-text">{stat.number}</div>
-                    <div className="text-sm text-muted-foreground">{stat.label}</div>
-                  </motion.div>
-                ))}
+                <motion.div 
+                  className="text-center group"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="text-3xl sm:text-4xl font-bold gradient-text">40+</div>
+                  <div className="text-sm text-gray-600 mt-1">Yıllık Tecrübe</div>
+                </motion.div>
+                <motion.div 
+                  className="text-center group"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="text-3xl sm:text-4xl font-bold gradient-text">5+</div>
+                  <div className="text-sm text-gray-600 mt-1">İhracat Ülkesi</div>
+                </motion.div>
+                <motion.div 
+                  className="text-center group"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="text-3xl sm:text-4xl font-bold gradient-text">5000+</div>
+                  <div className="text-sm text-gray-600 mt-1">Mutlu Müşteri</div>
+                </motion.div>
               </motion.div>
             </motion.div>
 
-            <motion.div
-              className="relative"
+            {/* Right Content - 2 columns */}
+            <motion.div 
+              className="lg:col-span-2 relative"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 1, delay: 0.4 }}
             >
-              <div className="relative h-[600px] rounded-2xl overflow-hidden shadow-2xl">
+              {/* Main Image */}
+              <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
                   src="/production-facility.jpeg"
                   alt="Tuna Sentetik Üretim Tesisi"
                   fill
-                  className="object-cover"
+                  className="object-cover transform scale-105 transition-transform duration-700 hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-900/30 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                
+                {/* Floating Badge */}
+                <motion.div
+                  className="absolute top-6 right-6 bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full shadow-lg backdrop-blur-sm flex items-center space-x-2"
+                  animate={{
+                    y: [0, -10, 0],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
+                  <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                  <span className="text-sm font-medium">Aktif Üretim</span>
+                </motion.div>
+
+                {/* Side Info Card */}
+                <motion.div
+                  className="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-2xl border border-white/20 max-w-xs"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.2 }}
+                  whileHover={{ y: -5 }}
+                >
+                  <div className="flex items-center space-x-3 mb-3">
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="font-bold text-navy-900">Modern Teknoloji</span>
+                  </div>
+                  <p className="text-sm text-gray-600">Gaziantep OSB'deki son teknoloji üretim tesisimizle 40 yıllık tecrübemizi birleştiriyoruz.</p>
+                </motion.div>
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg border border-navy-100">
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="font-semibold text-navy-900">Aktif Üretim</span>
-                </div>
-                <p className="text-sm text-muted-foreground mt-1">Modern teknoloji ile üretim</p>
-              </div>
+
+              {/* Decorative Elements */}
+              <motion.div
+                className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-r from-red-500 to-red-600 rounded-full opacity-20 blur-xl"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  rotate: [0, 180, 360],
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+              <motion.div
+                className="absolute -bottom-8 -right-8 w-32 h-32 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full opacity-10 blur-2xl"
+                animate={{
+                  scale: [1, 0.8, 1],
+                  y: [0, -20, 0],
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 2
+                }}
+              />
             </motion.div>
           </div>
         </div>
@@ -425,179 +487,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Products Preview Section */}
-      <section className="py-20 bg-gradient-to-br from-navy-50 via-white to-red-50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-4">Ürün Portföyümüz</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Endüstriyel ve ticari ihtiyaçlarınıza uygun geniş ürün yelpazemiz
-            </p>
-          </motion.div>
-
-          {/* First row - 3 products */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            {products.slice(0, 3).map((product, index) => (
-              <motion.div
-                key={product.id}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-              >
-                <div className="relative h-48 overflow-hidden cursor-pointer group" onClick={() => handleImageClick(product)}>
-                  {product.images ? (
-                    <div className="flex h-full w-full">
-                      {product.images.map((imgSrc, i) => (
-                        <div key={i} className="relative flex-1 min-w-0">
-                          <Image
-                            src={imgSrc || "/placeholder.svg"}
-                            alt={`${product.name} ${i + 1}`}
-                            fill
-                            className="object-cover transition-transform duration-500 hover:scale-105"
-                            onClick={(e) => {
-                              e.stopPropagation()
-                              handleImageClick(product, i)
-                            }}
-                          />
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                            <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white bg-black/50 rounded-full p-3">
-                              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="relative w-full h-full">
-                      <Image
-                        src={product.image || "/placeholder.svg"}
-                        alt={product.name}
-                        fill
-                        className="object-cover transition-transform duration-500 hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white bg-black/50 rounded-full p-3">
-                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold gradient-text mb-3">{product.name}</h3>
-                  {/* Açıklama bölümünü güncelliyoruz */}
-                  <ProductDescriptionWithToggle description={product.description} />
-                  <div className="space-y-2">
-                    {product.features.map((feature, i) => (
-                      <div key={i} className="flex items-center text-sm">
-                        <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                        <span>{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Second row - 2 products centered */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {products.slice(3, 5).map((product, index) => (
-              <motion.div
-                key={product.id}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: (index + 3) * 0.1 }}
-                whileHover={{ y: -5 }}
-              >
-                <div className="relative h-48 overflow-hidden cursor-pointer group" onClick={() => handleImageClick(product)}>
-                  {product.images ? (
-                    <div className="flex h-full w-full">
-                      {product.images.map((imgSrc, i) => (
-                        <div key={i} className="relative flex-1 min-w-0">
-                          <Image
-                            src={imgSrc || "/placeholder.svg"}
-                            alt={`${product.name} ${i + 1}`}
-                            fill
-                            className="object-cover transition-transform duration-500 hover:scale-105"
-                            onClick={(e) => {
-                              e.stopPropagation()
-                              handleImageClick(product, i)
-                            }}
-                          />
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                            <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white bg-black/50 rounded-full p-3">
-                              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="relative w-full h-full">
-                      <Image
-                        src={product.image || "/placeholder.svg"}
-                        alt={product.name}
-                        fill
-                        className="object-cover transition-transform duration-500 hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white bg-black/50 rounded-full p-3">
-                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold gradient-text mb-3">{product.name}</h3>
-                  {/* Açıklama bölümünü güncelliyoruz */}
-                  <ProductDescriptionWithToggle description={product.description} />
-                  <div className="space-y-2">
-                    {product.features.map((feature, i) => (
-                      <div key={i} className="flex items-center text-sm">
-                        <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                        <span>{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            className="text-center mt-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <Button asChild size="lg" className="gradient-bg-secondary text-white hover:opacity-90 button-3d">
-              <Link href="/urunler">Tüm Ürünleri Görüntüle</Link>
-            </Button>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Company Timeline */}
       <section className="py-20 bg-white">
@@ -617,23 +506,30 @@ export default function HomePage() {
 
           <div className="max-w-4xl mx-auto">
             <div className="relative">
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-red-500 to-navy-500"></div>
+              {/* Timeline line - hidden on mobile, visible on desktop */}
+              <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-red-500 to-navy-500"></div>
               {timeline.map((item, index) => (
                 <motion.div
                   key={index}
-                  className={`relative flex items-center mb-8 ${index % 2 === 0 ? "justify-start" : "justify-end"}`}
+                  className={`relative flex items-center mb-6 sm:mb-8 ${
+                    index % 2 === 0 ? "justify-start md:justify-end" : "justify-start"
+                  }`}
                   initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className={`w-5/12 ${index % 2 === 0 ? "text-right pr-8" : "text-left pl-8"}`}>
-                    <div className="bg-white p-6 rounded-xl shadow-lg border border-navy-100">
-                      <div className="text-2xl font-bold gradient-text mb-2">{item.year}</div>
-                      <p className="text-muted-foreground">{item.event}</p>
+                  <div className={`w-full md:w-5/12 ${
+                    index % 2 === 0 
+                      ? "text-right pr-0 md:pr-8" 
+                      : "text-left pl-0 md:pl-8"
+                  }`}>
+                    <div className="bg-white p-4 sm:p-6 rounded-xl shadow-lg border border-navy-100">
+                      <div className="text-lg sm:text-2xl font-bold gradient-text mb-1 sm:mb-2">{item.year}</div>
+                      <p className="text-sm sm:text-base text-muted-foreground">{item.event}</p>
                     </div>
                   </div>
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-red-500 rounded-full border-4 border-white shadow-lg"></div>
+                  <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-red-500 rounded-full border-4 border-white shadow-lg"></div>
                 </motion.div>
               ))}
             </div>

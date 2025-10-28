@@ -82,6 +82,11 @@ export default function Footer() {
                   İletişim
                 </Link>
               </li>
+              <li>
+                <Link href="/kvkk" className="text-navy-200 hover:text-red-300 transition-colors">
+                  KVKK
+                </Link>
+              </li>
             </ul>
           </div>
           <div>

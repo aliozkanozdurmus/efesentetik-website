@@ -27,9 +27,9 @@ const faqs = [
   },
   {
     id: 3,
-    question: "Ürünleriniz gıda ile temasa uygun mu?",
+    question: "Ürünlerimiz gıda ile temasa uygun mu?",
     answer:
-      "Evet, gıda sektörü için ürettiğimiz çuvallar, gıda ile temasa uygun hammaddelerden üretilmekte ve ilgili sağlık sertifikalarına sahiptir. Bu ürünlerimiz, ulusal ve uluslararası gıda güvenliği standartlarına uygun olarak üretilmektedir. FDA ve CE sertifikalarımız mevcuttur.",
+      "Evet, gıda sektörü için ürettiğimiz çuvallar, gıda ile temasa uygun hammaddelerden üretilmekte ve ilgili sağlık sertifikalarına sahiptir. Bu ürünlerimiz, ulusal ve uluslararası gıda güvenliği standartlarına uygun olarak üretilmektedir.",
     category: "quality",
   },
   {
