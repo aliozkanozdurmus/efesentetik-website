@@ -12,8 +12,8 @@ export default function Preloader() {
   if (!loading) return null;
 
   return (
-    <div className="fixed inset-0 bg-white z-60 flex items-center justify-center">
-      <div className="h-8 w-8 rounded-full bg-primary animate-pulse" />
+<div className="fixed inset-0 bg-white z-[9999] flex items-center justify-center">
+      <div className="h-8 w-8 rounded-full bg-gray-800 animate-pulse" />
     </div>
   );
 }
