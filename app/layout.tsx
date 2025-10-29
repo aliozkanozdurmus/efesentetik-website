@@ -4,6 +4,8 @@ import type React from "react"
 import type { Metadata } from "next"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import CookieConsent from "./components/CookieConsent"
+import Preloader from "./components/Preloader"
 import MouseMoveEffect from "@/components/mouse-move-effect"
 import ScrollProgress from "@/components/scroll-progress"
 
@@ -28,12 +30,14 @@ export default function RootLayout({
   return (
     <html lang="tr" className={montserrat.variable}>
       <body className="bg-background text-foreground antialiased">
+        <Preloader />
         <MouseMoveEffect />
         <ScrollProgress />
         <div className="grain-overlay" />
         <Header />
         <main className="min-h-screen pt-16">{children}</main>
         <Footer />
+        <CookieConsent />
       </body>
     </html>
   )

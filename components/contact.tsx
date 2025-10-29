@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Phone, Mail, MapPin, Clock } from "lucide-react"
+import { Mail, MapPin, Clock } from "lucide-react"
 
 export default function Contact() {
   return (
@@ -48,13 +48,6 @@ export default function Contact() {
                       <br />
                       Şehitkamil / Gaziantep
                     </p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <Phone className="h-5 w-5 text-primary mr-3 mt-0.5" />
-                  <div>
-                    <p className="font-medium">Telefon</p>
-                    <p className="text-muted-foreground">+90 342 123 4567</p>
                   </div>
                 </div>
                 <div className="flex items-start">

@@ -94,55 +94,6 @@ export default function Header() {
         }}
       >
         <div className="container mx-auto">
-          {/* Top Bar */}
-          <AnimatePresence>
-            {!isScrolled && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                className="overflow-hidden"
-              >
-                <div className="border-b border-gray-100/50 bg-gradient-to-r from-navy-50/50 to-red-50/50">
-                  <div className="container mx-auto px-4 py-2 flex justify-between items-center">
-                    <div className="hidden md:flex items-center space-x-4 text-xs text-gray-600">
-                      <motion.div 
-                        className="flex items-center space-x-1"
-                        whileHover={{ scale: 1.05 }}
-                      >
-                        <Phone className="w-3 h-3" />
-                        <span>+90 342 123 4567</span>
-                      </motion.div>
-                      <motion.div 
-                        className="flex items-center space-x-1"
-                        whileHover={{ scale: 1.05 }}
-                      >
-                        <Mail className="w-3 h-3" />
-                        <span>info@tunasentetik.com</span>
-                      </motion.div>
-                      <motion.div 
-                        className="flex items-center space-x-1"
-                        whileHover={{ scale: 1.05 }}
-                      >
-                        <MapPin className="w-3 h-3" />
-                        <span>Gaziantep OSB</span>
-                      </motion.div>
-                    </div>
-                    <motion.div 
-                      className="flex items-center space-x-2"
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.3 }}
-                    >
-                      <Sparkles className="w-3 h-3 text-yellow-500" />
-                      <span className="text-xs text-gray-600">40+ Yıllık Tecrübe</span>
-                    </motion.div>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-
           {/* Main Header */}
           <div className="flex h-16 lg:h-20 items-center justify-between px-4">
             {/* Logo */}
@@ -154,7 +105,7 @@ export default function Header() {
               <Link href="/" className="flex items-center">
                 <div className="relative">
                   <motion.div
-                    className="relative h-10 w-40 lg:h-12 lg:w-48"
+                    className="relative h-12 w-48 lg:h-16 lg:w-64"
                     initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
                     animate={{ opacity: 1, scale: 1, rotate: 0 }}
                     transition={{ 
@@ -376,10 +327,6 @@ export default function Header() {
                     >
                       <X className="h-5 w-5" />
                     </Button>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Sparkles className="w-4 h-4" />
-                    <span className="text-sm">40+ Yıllık Tecrübe</span>
                   </div>
                 </div>
 

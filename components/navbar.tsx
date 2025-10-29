@@ -75,10 +75,6 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <Button variant="ghost" size="sm" className="flex items-center gap-2">
-              <Phone className="h-4 w-4" />
-              <span>+90 342 123 4567</span>
-            </Button>
             <Button size="sm" className="flex items-center gap-2 bg-primary hover:bg-primary/90">
               <Mail className="h-4 w-4" />
               <span>İletişim</span>
@@ -146,10 +142,6 @@ export default function Navbar() {
               İletişim
             </Link>
             <div className="flex flex-col space-y-2 pt-2 border-t">
-              <Button variant="ghost" size="sm" className="justify-start">
-                <Phone className="h-4 w-4 mr-2" />
-                <span>+90 342 123 4567</span>
-              </Button>
               <Button size="sm" className="justify-start bg-primary hover:bg-primary/90">
                 <Mail className="h-4 w-4 mr-2" />
                 <span>İletişim</span>

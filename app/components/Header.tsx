@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <header className="py-4 px-6 bg-white shadow-sm">
       <div className="container mx-auto flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold text-primary">
+<Link href="/" className="text-xl font-bold text-primary">
           StreamLine
         </Link>
         <nav className="hidden md:flex space-x-6">
