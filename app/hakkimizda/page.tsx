@@ -96,8 +96,7 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold gradient-text">TUNA GROUP Hikayesi</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  TUNA ŞİRKETLER GRUBU'nun ilk temelleri 1984 yılında HUZEYFE DURMAZ tarafından atılmış, TUNA GROUP
-                  faaliyetine sentetik dokuma kumaş ve çuval sektöründe üretim yaparak başlamıştır.
+                  TUNA ŞİRKETLER GRUBU'nun ilk temelleri 1984 yılında HUZEYFE DURMAZ tarafından atılmıştır.
                 </p>
                 <p>
                   Ülkesine ve çalışanlarına fayda sağlamayı amaçlayan TUNA GROUP, sistemini sürekli yenilemeye ve
@@ -278,47 +277,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Timeline Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-4">Tarihçemiz</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              1984'ten günümüze kadar olan gelişimimiz ve başarı hikayemiz
-            </p>
-          </motion.div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="relative">
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-red-500 to-navy-500"></div>
-              {timeline.map((item, index) => (
-                <motion.div
-                  key={index}
-                  className={`relative flex items-center mb-8 ${index % 2 === 0 ? "justify-start" : "justify-end"}`}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <div className={`w-5/12 ${index % 2 === 0 ? "text-right pr-8" : "text-left pl-8"}`}>
-                    <div className="bg-white p-6 rounded-xl shadow-lg border border-navy-100">
-                      <div className="text-2xl font-bold gradient-text mb-2">{item.year}</div>
-                      <p className="text-muted-foreground">{item.event}</p>
-                    </div>
-                  </div>
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-red-500 rounded-full border-4 border-white shadow-lg"></div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section - Removed "Ürün Kataloğu" button */}
       <section className="py-20 bg-gradient-to-r from-navy-900 via-navy-800 to-red-900 text-white relative overflow-hidden">
@@ -395,7 +353,7 @@ export default function AboutPage() {
                     <Phone className="h-6 w-6 text-red-500 mr-4 mt-1" />
                     <div>
                       <p className="font-semibold gradient-text mb-1">Telefon</p>
-                      <p className="text-muted-foreground">+90 342 123 4567</p>
+                      <p className="text-muted-foreground">+90 342 360 58 58</p>
                     </div>
                   </div>
                   <div className="flex items-start">

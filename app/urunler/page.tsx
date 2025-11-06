@@ -120,11 +120,8 @@ const products = [
     description:
       "Müşterilerimizin özel ihtiyaçlarına yönelik, farklı renk, desen ve özelliklerde PP dokuma kumaşlar üretiyoruz. Yüksek kaliteli hammaddeler ve ileri teknoloji ile dayanıklı ve estetik çözümler sunuyoruz.",
     images: [
-      "/products/pp-woven-roll-striped-1.jpeg",
       "/products/pp-woven-patterns.jpeg",
       "/products/pp-woven-production-1.jpeg",
-      "/products/pp-woven-roll-striped-2.jpeg",
-      "/products/pp-woven-roll-striped-3.jpeg",
     ],
     features: [
       "Özel Renkler",
@@ -261,20 +258,16 @@ export default function ProductsPage() {
                 whileHover={{ y: -5 }}
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-                  <div className="relative h-64 md:h-auto overflow-hidden cursor-pointer group" onClick={() => handleImageClick(product)}>
+                  <div className="relative h-64 md:h-auto overflow-x-auto md:overflow-hidden">
                     {(product.id === 1 || product.id === 6 || product.id === 7) && product.images ? ( // Birden fazla görseli olan ürünler için
-                      <div className="flex h-full w-full">
+                      <div className="flex h-full w-full md:w-auto">
                         {product.images.map((imgSrc, i) => (
-                          <div key={i} className="relative flex-1 min-w-0">
+                          <div key={i} className="relative flex-shrink-0 w-full md:flex-1 md:min-w-0 cursor-pointer group" onClick={() => handleImageClick(product, i)}>
                             <Image
                               src={imgSrc || "/placeholder.svg"}
                               alt={`${product.name} ${i + 1}`}
                               fill
                               className="object-cover transition-transform duration-500 hover:scale-105"
-                              onClick={(e) => {
-                                e.stopPropagation()
-                                handleImageClick(product, i)
-                              }}
                             />
                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
                               <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white bg-black/50 rounded-full p-3">
@@ -287,7 +280,7 @@ export default function ProductsPage() {
                         ))}
                       </div>
                     ) : (
-                      <div className="relative w-full h-full">
+                      <div className="relative w-full h-full cursor-pointer group" onClick={() => handleImageClick(product)}>
                         <Image
                           src={product.image || "/placeholder.svg"}
                           alt={product.name}
@@ -360,7 +353,7 @@ export default function ProductsPage() {
             <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-6">Özel İhtiyaçlarınız İçin</h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Standart ürünlerimizin yanı sıra, özel ihtiyaçlarınıza uygun çuval ve iplik çözümleri de üretebiliyoruz.
-              40 yıllık tecrübemizle size en uygun çözümü sunuyoruz.
+              Yılların verdiği deneyimle size en uygun çözümü sunuyoruz.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button asChild size="lg" className="gradient-bg-secondary text-white hover:opacity-90 button-3d">

@@ -284,7 +284,7 @@ export default function HomePage() {
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
                 <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                <span className="font-medium">1984'ten Bu Yana Güvenilir Kalite</span>
+                <span className="font-medium">Doğa ve Çevre Dostu Üretim</span>
               </motion.div>
 
               {/* Main Heading */}
@@ -680,7 +680,7 @@ export default function HomePage() {
                     <Phone className="h-6 w-6 text-red-500 mr-4 mt-1" />
                     <div>
                       <p className="font-semibold gradient-text mb-1">Telefon</p>
-                      <p className="text-muted-foreground">+90 342 123 4567</p>
+                      <p className="text-muted-foreground">+90 342 360 58 58</p>
                     </div>
                   </div>
                   <div className="flex items-start">

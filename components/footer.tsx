@@ -14,7 +14,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-navy-100 mb-4">
-              1984'ten bu yana sentetik dokuma kumaş ve çuval sektöründe faaliyet gösteren, kalite ve güvenilirlikte
+              Sentetik dokuma kumaş ve çuval sektöründe faaliyet gösteren, kalite ve güvenilirlikte
               öncü firmamız.
             </p>
             {/* Sosyal medya butonları kaldırıldı */}

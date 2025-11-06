@@ -39,18 +39,12 @@ const faqs = [
       "Evet, başta Orta Doğu ve Afrika ülkeleri olmak üzere, Avrupa ve Orta Asya'ya düzenli olarak ihracat yapmaktayız. Birden fazla ülkeye ihracat deneyimimiz bulunmaktadır. Uluslararası standartlara uygun üretim yapıyor ve gerekli tüm belgelendirme süreçlerini tamamlıyoruz.",
     category: "general",
   },
-  {
-    id: 5,
-    question: "Çuvalların dayanıklılık süresi ne kadardır?",
-    answer:
-      "Çuvallarımız, doğru koşullarda saklandığında ve kullanıldığında uzun yıllar dayanıklılığını koruyabilmektedir. PP çuvallarımız ortalama 3-5 yıl, jüt çuvallarımız 2-3 yıl dayanıklılık göstermektedir. Ürünlerimiz UV koruması ve nem direnci gibi özelliklere sahiptir.",
-    category: "quality",
-  },
+
   {
     id: 6,
     question: "Numune talep edebilir miyiz?",
     answer:
-      "Evet, potansiyel müşterilerimize ürünlerimizin kalitesini göstermek için ücretsiz numune gönderimi yapıyoruz. Numune talebiniz için web sitemiz üzerinden veya telefon ile iletişime geçebilirsiniz. Kargo ücreti tarafınızdan karşılanmaktadır.",
+      "Evet, potansiyel müşterilerimize ürünlerimizin kalitesini göstermek için ücretsiz numune gönderimi yapıyoruz. Numune talebiniz için web sitemiz üzerinden veya telefon ile iletişime geçebilirsiniz.",
     category: "general",
   },
   {

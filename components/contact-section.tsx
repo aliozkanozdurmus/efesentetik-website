@@ -56,7 +56,7 @@ export default function ContactSection() {
                   <Phone className="h-5 w-5 text-red-500 mr-3 mt-0.5" />
                   <div>
                     <p className="font-medium gradient-text">Telefon</p>
-                    <p className="text-muted-foreground">+90 342 123 4567</p>
+                    <p className="text-muted-foreground">+90 342 360 58 58</p>
                   </div>
                 </div>
                 <div className="flex items-start">
