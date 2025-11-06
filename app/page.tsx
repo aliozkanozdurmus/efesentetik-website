@@ -25,11 +25,7 @@ import Link from "next/link"
 import { useState, useRef, useEffect } from "react" // useState, useRef, useEffect eklendi
 import ImageGalleryDialog from "@/components/image-gallery-dialog"
 
-const stats = [
-  { number: "40+", label: "Yıllık Tecrübe" },
-  { number: "5+", label: "İhracat Ülkesi" },
-  { number: "5000+", label: "Mutlu Müşteri" },
-]
+
 
 const features = [
   {
@@ -40,17 +36,17 @@ const features = [
   {
     icon: <Users className="h-8 w-8 text-red-500" />,
     title: "Deneyimli Ekip",
-    description: "40+ yıllık sektör deneyimi ile uzman kadromuz",
+    description: "Uzun yıllardır edindiğimiz sektör deneyimi ile uzman kadromuz",
   },
   {
     icon: <Globe className="h-8 w-8 text-red-500" />,
     title: "Global Erişim",
-    description: "5+ ülkeye ihracat ve dünya çapında güvenilir hizmet",
+    description: "Birden fazla ülkeye ihracat ve dünya çapında güvenilir hizmet",
   },
   {
     icon: <CheckCircle className="h-8 w-8 text-red-500" />,
     title: "Müşteri Memnuniyeti",
-    description: "5000+ mutlu müşteri ile kanıtlanmış güvenilirlik",
+    description: "Binlerce mutlu müşteri ile kanıtlanmış güvenilirlik",
   },
 ]
 
@@ -239,7 +235,7 @@ const timeline = [
   { year: "2000", event: "Çuval üretiminde kapasite artırımı" },
   { year: "2010", event: "İhracata başlangıç ve uluslararası sertifikasyonlar" },
   { year: "2020", event: "Modern tesise taşınma ve teknoloji yatırımları" },
-  { year: "2024", event: "5+ ülkeye ihracat ve sürdürülebilir üretim" },
+  { year: "2024", event: "Birden fazla ülkeye ihracat ve sürdürülebilir üretim" },
 ]
 
 export default function HomePage() {
@@ -310,8 +306,8 @@ export default function HomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                Tuna Şirketler Grubu olarak 1984'ten bu yana sentetik dokuma kumaş ve çuval sektöründe faaliyet göstermekteyiz. 
-                Endüstriyel ve ticari sektörlerin ihtiyaçlarına uygun, yüksek kaliteli PP çuval üretimi gerçekleştiriyoruz.
+                
+                Tuna Şirketler Grubu olarak sentetik dokuma kumaş ve çuval sektöründe faaliyet göstermekteyiz. Endüstriyel ve ticari sektörlerin ihtiyaçlarına uygun, yüksek kaliteli PP çuval üretimi gerçekleştiriyoruz.
               </motion.p>
 
               {/* CTA Buttons */}
@@ -337,38 +333,7 @@ export default function HomePage() {
                 </Button>
               </motion.div>
 
-              {/* Stats */}
-              <motion.div
-                className="grid grid-cols-3 gap-6 sm:gap-8"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1 }}
-              >
-                <motion.div 
-                  className="text-center group"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <div className="text-3xl sm:text-4xl font-bold gradient-text">40+</div>
-                  <div className="text-sm text-gray-600 mt-1">Yıllık Tecrübe</div>
-                </motion.div>
-                <motion.div 
-                  className="text-center group"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <div className="text-3xl sm:text-4xl font-bold gradient-text">5+</div>
-                  <div className="text-sm text-gray-600 mt-1">İhracat Ülkesi</div>
-                </motion.div>
-                <motion.div 
-                  className="text-center group"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <div className="text-3xl sm:text-4xl font-bold gradient-text">5000+</div>
-                  <div className="text-sm text-gray-600 mt-1">Mutlu Müşteri</div>
-                </motion.div>
-              </motion.div>
+
             </motion.div>
 
             {/* Right Content - 2 columns */}
@@ -416,7 +381,7 @@ export default function HomePage() {
                     <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                     <span className="font-bold text-navy-900">Modern Teknoloji</span>
                   </div>
-                  <p className="text-sm text-gray-600">Gaziantep OSB'deki son teknoloji üretim tesisimizle 40 yıllık tecrübemizi birleştiriyoruz.</p>
+                  <p className="text-sm text-gray-600">Gaziantep OSB'deki son teknoloji üretim tesisimizle uzun yıllardır edindiğimiz tecrübemizi birleştiriyoruz.</p>
                 </motion.div>
               </div>
 
@@ -463,7 +428,7 @@ export default function HomePage() {
           >
             <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-4">Neden Tuna Sentetik?</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              40 yıllık tecrübemiz ve modern üretim anlayışımızla sektörde öncü konumumuzu sürdürüyoruz
+              Uzun yıllardır edindiğimiz tecrübemiz ve modern üretim anlayışımızla sektörde öncü konumumuzu sürdürüyoruz
             </p>
           </motion.div>
 
@@ -488,7 +453,7 @@ export default function HomePage() {
       </section>
 
 
-      {/* Company Timeline */}
+      {/* Featured Products Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
@@ -498,42 +463,56 @@ export default function HomePage() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-4">40 Yıllık Yolculuğumuz</h2>
+            <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-4">Öne Çıkan Ürünlerimiz</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              1984'ten günümüze kadar olan gelişimimiz ve başarı hikayemiz
+              Kaliteli ve dayanıklı ürünlerimizle tanışın.
             </p>
           </motion.div>
 
-          <div className="max-w-4xl mx-auto">
-            <div className="relative">
-              {/* Timeline line - hidden on mobile, visible on desktop */}
-              <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-red-500 to-navy-500"></div>
-              {timeline.map((item, index) => (
-                <motion.div
-                  key={index}
-                  className={`relative flex items-center mb-6 sm:mb-8 ${
-                    index % 2 === 0 ? "justify-start md:justify-end" : "justify-start"
-                  }`}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <div className={`w-full md:w-5/12 ${
-                    index % 2 === 0 
-                      ? "text-right pr-0 md:pr-8" 
-                      : "text-left pl-0 md:pl-8"
-                  }`}>
-                    <div className="bg-white p-4 sm:p-6 rounded-xl shadow-lg border border-navy-100">
-                      <div className="text-lg sm:text-2xl font-bold gradient-text mb-1 sm:mb-2">{item.year}</div>
-                      <p className="text-sm sm:text-base text-muted-foreground">{item.event}</p>
-                    </div>
-                  </div>
-                  <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-red-500 rounded-full border-4 border-white shadow-lg"></div>
-                </motion.div>
-              ))}
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {products.slice(0, 4).map((product, index) => (
+              <motion.div
+                key={product.id}
+                className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-navy-100 overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
+              >
+                <div className="relative h-48 cursor-pointer" onClick={() => handleImageClick(product)}>
+                  <Image
+                    src={product.image || (product.images && product.images[0]) || "/placeholder.svg"}
+                    alt={product.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold gradient-text mb-2">{product.name}</h3>
+                  <p className="text-muted-foreground text-sm mb-4 line-clamp-3">{product.description}</p>
+                  <Button asChild variant="outline" className="w-full">
+                    <Link href="/urunler">Detayları Gör</Link>
+                  </Button>
+                </div>
+              </motion.div>
+            ))}
           </div>
+
+          <motion.div
+            className="text-center mt-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <Button asChild size="lg" className="gradient-bg-secondary text-white hover:opacity-90 button-3d group">
+              <Link href="/urunler" className="flex items-center">
+                <span>Tüm Ürünleri Göster</span>
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+          </motion.div>
         </div>
       </section>
 
@@ -642,7 +621,7 @@ export default function HomePage() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">İhtiyacınıza Özel Çuval Çözümleri</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
-              40 yıllık tecrübemiz ve modern üretim teknolojimizle size en uygun çözümleri sunuyoruz. Hemen iletişime
+              Uzun yıllardır edindiğimiz tecrübemiz ve modern üretim teknolojimizle size en uygun çözümleri sunuyoruz. Hemen iletişime
               geçin ve özel teklifinizi alın.
             </p>
             <div className="flex justify-center">

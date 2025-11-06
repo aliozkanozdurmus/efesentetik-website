@@ -12,8 +12,8 @@ const features = [
   },
   {
     icon: <Clock className="h-8 w-8 text-primary" />,
-    title: "20+ Yıllık Tecrübe",
-    description: "Sektörde 20 yılı aşkın deneyimimizle müşterilerimize en iyi hizmeti sunuyoruz.",
+    title: "Uzun Yıllık Tecrübe",
+    description: "Sektörde uzun yıllardır edindiğimiz deneyimimizle müşterilerimize en iyi hizmeti sunuyoruz.",
   },
   {
     icon: <Users className="h-8 w-8 text-primary" />,

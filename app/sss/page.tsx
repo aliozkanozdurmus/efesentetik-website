@@ -36,7 +36,7 @@ const faqs = [
     id: 4,
     question: "Yurt dışına ihracat yapıyor musunuz?",
     answer:
-      "Evet, başta Orta Doğu ve Afrika ülkeleri olmak üzere, Avrupa ve Orta Asya'ya düzenli olarak ihracat yapmaktayız. 15'ten fazla ülkeye ihracat deneyimimiz bulunmaktadır. Uluslararası standartlara uygun üretim yapıyor ve gerekli tüm belgelendirme süreçlerini tamamlıyoruz.",
+      "Evet, başta Orta Doğu ve Afrika ülkeleri olmak üzere, Avrupa ve Orta Asya'ya düzenli olarak ihracat yapmaktayız. Birden fazla ülkeye ihracat deneyimimiz bulunmaktadır. Uluslararası standartlara uygun üretim yapıyor ve gerekli tüm belgelendirme süreçlerini tamamlıyoruz.",
     category: "general",
   },
   {

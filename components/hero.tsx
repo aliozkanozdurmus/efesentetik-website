@@ -37,7 +37,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Efe Sentetik olarak 20 yılı aşkın tecrübemizle, tarım, gıda ve sanayi sektörlerine yönelik yüksek kaliteli
+            Efe Sentetik olarak uzun yıllardır edindiğimiz tecrübemizle, tarım, gıda ve sanayi sektörlerine yönelik yüksek kaliteli
             çuval çözümleri sunuyoruz. PP çuval, jüt çuval ve özel üretim çuvallarımızla ihtiyaçlarınıza uygun çözümler
             üretiyoruz.
           </motion.p>

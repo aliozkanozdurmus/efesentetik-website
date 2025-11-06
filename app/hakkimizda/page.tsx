@@ -16,8 +16,8 @@ const features = [
   },
   {
     icon: <Clock className="h-8 w-8 text-red-500" />,
-    title: "40+ Yıllık Tecrübe",
-    description: "Sektörde 40 yılı aşkın deneyimimizle müşterilerimize en iyi hizmeti sunuyoruz.",
+    title: "Uzun Yıllık Tecrübe",
+    description: "Sektörde uzun yıllardır edindiğimiz deneyimimizle müşterilerimize en iyi hizmeti sunuyoruz.",
   },
   {
     icon: <Users className="h-8 w-8 text-red-500" />,
@@ -106,7 +106,7 @@ export default function AboutPage() {
                   sürdürmektedir.
                 </p>
                 <p>
-                  40 yılı aşkın deneyimimizle, müşteri memnuniyetini ön planda tutarak, endüstriyel ve ticari
+                  Uzun yıllardır edindiğimiz deneyimimizle, müşteri memnuniyetini ön planda tutarak, endüstriyel ve ticari
                   sektörlerin ihtiyaçlarına uygun yüksek kaliteli PP çuval üretimi gerçekleştirmekteyiz. Üretim
                   süreçlerimize en son teknolojik yenilikleri entegre ederek, çevreye duyarlı yaklaşımımızla topluma
                   değer katmaya devam ediyoruz.
@@ -270,7 +270,7 @@ export default function AboutPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                40 yıllık tecrübemizle modern teknoloji ve geleneksel kaliteyi bir araya getiriyoruz. Üretim tesisimizde
+                Uzun yıllardır edindiğimiz tecrübemizle modern teknoloji ve geleneksel kaliteyi bir araya getiriyoruz. Üretim tesisimizde
                 her aşamada kalite kontrol uygulayarak, müşterilerimize en iyi ürünleri sunuyoruz.
               </p>
             </motion.div>
@@ -336,7 +336,7 @@ export default function AboutPage() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">İhtiyacınıza Özel Çuval Çözümleri</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
-              40 yıllık tecrübemiz ve modern üretim teknolojimizle size en uygun çözümleri sunuyoruz. Hemen iletişime
+              Uzun yıllardır edindiğimiz tecrübemiz ve modern üretim teknolojimizle size en uygun çözümleri sunuyoruz. Hemen iletişime
               geçin ve özel teklifinizi alın.
             </p>
             <div className="flex justify-center">

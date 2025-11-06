@@ -95,7 +95,7 @@ export default function Header() {
       >
         <div className="container mx-auto">
           {/* Main Header */}
-          <div className="flex h-16 lg:h-20 items-center justify-between px-4">
+          <div className="flex h-20 lg:h-24 items-center justify-between px-4">
             {/* Logo */}
             <motion.div
               className="flex items-center"
@@ -105,7 +105,7 @@ export default function Header() {
               <Link href="/" className="flex items-center">
                 <div className="relative">
                   <motion.div
-                    className="relative h-12 w-48 lg:h-16 lg:w-64"
+                    className="relative h-14 w-56 lg:h-20 lg:w-72"
                     initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
                     animate={{ opacity: 1, scale: 1, rotate: 0 }}
                     transition={{ 
